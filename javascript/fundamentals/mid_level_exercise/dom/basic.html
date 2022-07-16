@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>DOM</title>
+   </head>
+   <body>
+      <div id="header">
+         <!-- <h1>Poodles!</h1>
+         <h3>
+            An Essay into the Pom-Pom as Aesthetic Reconfiguration of the Other
+            from a post-Frankfurt School Appropriationist Perspective
+         </h3>
+         <p><em>By: Byron Q. Poodle, Esq., BA.</em></p> -->
+      </div>
+      <script>
+         let element = document.createElement('div')
+         document.body.appendChild(element)
+         let ul = document.createElement('ul')
+
+         for (let i = 0; i < 3; i++) {
+            let li = document.createElement('li')
+            li.innerHTML = (i + 1).toString()
+            ul.appendChild(li)
+         }
+
+         element.appendChild(ul)
+
+         // Change Properties on DOM Nodes
+         element.style.backgroundColor = '#27647B'
+         element.style.textAlign = 'center'
+         ul.style.textAlign = 'left'
+         // Remove Elements from the DOM
+         ul.removeChild(ul.querySelector('li:nth-child(2)'))
+      </script>
+   </body>
+</html>

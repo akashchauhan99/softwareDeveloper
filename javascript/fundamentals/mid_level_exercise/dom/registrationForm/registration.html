@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- <meta charset="UTF-8" /> -->
+      <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+      <title>Student Registration Form</title>
+      <link rel="stylesheet" href="./registration.css" />
+      <!-- <script type="text/javascript" src="./registration.js"></script> -->
+      <script type="text/javascript" src="./registrationByFormName.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <form action="#" name="myForm">
+            <h2>Student Registration Form</h2>
+            <hr />
+            <label>Name: </label
+            ><input type="text" name="name" id="name" /><br />
+            <label>DOB: </label><input type="date" name="dob" id="dob" /><br />
+            <div class="genderContainer">
+               <label>Gender: </label><br />
+               Male :
+               <input
+                  type="radio"
+                  class="gender"
+                  value="Male"
+                  name="gender"
+                  checked
+               />
+               Female :
+               <input
+                  type="radio"
+                  class="gender"
+                  value="Female"
+                  name="gender"
+               />
+               Other :
+               <input type="radio" class="gender" value="Other" name="gender" />
+            </div>
+            <br />
+            <label>Email: </label>
+            <input type="email" name="email" id="email" /><br />
+            <label>Address: </label><br />
+            <textarea name="address" id="add" cols="80" rows="5"></textarea
+            ><br />
+            <label>School Name:</label>
+            <input type="text" name="school" id="school" /><br />
+            <div>
+               <label>Department: </label>
+               <select
+                  name="department"
+                  id="department"
+                  onchange="departmentChange()"
+               >
+                  <option value="B.Tech">B.Tech</option>
+                  <option value="B.E">B.E</option>
+               </select>
+            </div>
+            <div>
+               <label>Course: </label>
+               <select name="course" id="course" onchange="courseChange()">
+                  <option value="cse">CSE</option>
+                  <option value="it">IT</option>
+                  <option value="ece">ECE</option>
+                  <option value="me">ME</option>
+                  <option value="ce">CE</option>
+                  <option value="ee">EE</option>
+               </select>
+            </div>
+            <label>Mobile Number: </label>
+            <input type="text" name="mobile" id="mobile" /><br />
+            <div class="button">
+               <button type="reset" id="reset">Reset</button>
+               <button type="submit" id="submit" onclick="register()">
+                  Submit
+               </button>
+            </div>
+         </form>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Wordy</title>
+   </head>
+   <body>
+      <script>
+         class ArgumentError extends Error {
+            constructor(message) {
+               super(message)
+            }
+         }
+
+         class Wordy {
+            constructor(problem) {
+               this.problem = problem
+            }
+
+            answer() {
+               let answer = 0
+               let seen = 0
+               this.problem
+                  .toLowerCase()
+                  .replace(/([^-0-9]+)(-?[0-9]*)/g, (match, op, valStr) => {
+                     seen += match.length
+                     const val = parseInt(valStr)
+                     switch (op.trim()) {
+                        case 'what is':
+                           answer = val
+                           break
+                        case 'plus':
+                           answer += val
+                           break
+                        case 'minus':
+                           answer -= val
+                           break
+                        case 'divided by':
+                           answer /= val
+                           break
+                        case 'multiplied by':
+                           answer *= val
+                           break
+                        case '?':
+                           break
+                        default:
+                           throw new ArgumentError(`don't know how to [${op}]`)
+                     }
+                  })
+
+               if (seen !== this.problem.length) {
+                  throw new ArgumentError(`couldn't parse [${this.problem}]`)
+               }
+               return answer
+            }
+         }
+
+         // export { Wordy as WordProblem, ArgumentError }
+
+         let wordy0 = new Wordy('What is 5?')
+         console.log(wordy0.answer())
+         let wordy1 = new Wordy('What is 5 plus 13?')
+         console.log(wordy1.answer())
+         let wordy2 = new Wordy('What is 7 minus 5?')
+         console.log(wordy2.answer())
+      </script>
+   </body>
+</html>

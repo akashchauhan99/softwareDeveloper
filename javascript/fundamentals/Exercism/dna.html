@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function toRna() {
+            let dna = ['A', 'G', 'T', 'C']
+            let rna = ['C', 'A', 'U', 'G']
+            let obj = {}
+            for (let i = 0; i < dna.length; i++) {
+               for (let j = 0; j < rna.length; j++) {
+                  if (dna[i] == 'G' && rna[j] == 'C') {
+                     obj[dna[i]] = rna[j]
+                  }
+                  if (dna[i] == 'C' && rna[j] == 'G') {
+                     obj[dna[i]] = rna[j]
+                  }
+                  if (dna[i] == 'T' && rna[j] == 'A') {
+                     obj[dna[i]] = rna[j]
+                  }
+                  if (dna[i] == 'A' && rna[j] == 'U') {
+                     obj[dna[i]] = rna[j]
+                  }
+               }
+            }
+            for (let [key, value] of Object.entries(obj)) {
+               console.log(key, value)
+            }
+         }
+         toRna()
+      </script>
+   </body>
+</html>

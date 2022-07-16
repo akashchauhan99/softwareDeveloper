@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Open Hour of Shop</title>
+      <link rel="stylesheet" href="./openhour.css" />
+      <script src="./openhour.js"></script>
+   </head>
+   <body>
+      <section>
+         <select id="day" name="day">
+            <option value="0">Sunday</option>
+            <option value="1" selected>Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+         </select>
+         <div>
+            <input
+               type="text"
+               name="start"
+               id="start"
+               placeholder="start time"
+            />
+         </div>
+         <div>
+            <input type="text" name="end" id="end" placeholder="end time" />
+         </div>
+
+         <div>
+            <button type="submit" onclick="calculate()">Calculate</button>
+         </div>
+      </section>
+   </body>
+</html>

@@ -1,0 +1,205 @@
+body {
+   display: flex;
+   margin: 0;
+   font-family: sans-serif;
+   background-color: #fcf6f5ff;
+}
+
+section {
+   display: flex;
+   width: 50%;
+   height: 100vh;
+}
+
+.left {
+   align-items: center;
+   justify-content: center;
+   background-color: rgb(239, 236, 245);
+}
+
+h1 {
+   font-size: xx-large;
+   text-align: center;
+}
+
+form {
+   width: 100%;
+}
+
+.form {
+   padding: 25px;
+   background-color: #eec9c9;
+   /* height: 420px; */
+   width: 350px;
+   border-radius: 20px;
+   box-shadow: 10px 10px 50px black;
+}
+
+fieldset {
+   margin: 10px;
+   height: 70px;
+   padding: 0;
+   background-color: white;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 5px 5px 10px rgb(91, 97, 116);
+}
+
+legend {
+   margin-left: 10px;
+   box-shadow: 2px 2px 10px rgb(94, 90, 119);
+   background-color: #2b7952;
+   border-radius: 5px;
+   padding: 3px;
+   color: white;
+   text-shadow: 5px 5px 5px 5px 10px;
+}
+
+fieldset input {
+   background-color: rgba(0, 0, 0, 0);
+   border: none;
+   height: 100%;
+   width: 250px;
+   width: 95%;
+   font-size: 1.3em;
+}
+
+fieldset input[type='radio'] {
+   width: 80px;
+}
+
+input:focus {
+   outline: none;
+   background-color: rgba(242, 253, 253, 0.925);
+}
+
+.regis form fieldset legend input {
+   border-radius: 10px;
+}
+
+div {
+   display: flex;
+}
+
+.right {
+   box-sizing: border-box;
+   background-color: #eff8f6;
+   color: #fcf6f5ff;
+   padding: 10px;
+   overflow-y: scroll;
+   justify-content: center;
+}
+
+.right table {
+   width: 100%;
+   text-align: left;
+}
+
+th {
+   font-size: 1.5em;
+   padding: 5px;
+   font-weight: 300;
+   border-radius: 3px;
+   background-color: #eec9c9;
+   box-shadow: 0px 0px 2px 2px rgb(59, 50, 50);
+}
+
+td {
+   padding: 5px;
+   border: 1px solid black;
+   border: none;
+   border-radius: 3px;
+   background-color: rgb(252, 246, 255);
+   color: black;
+   box-shadow: 0px 0px 2px 2px rgb(59, 50, 50);
+}
+
+td button {
+   border: none;
+   background-color: #00000000;
+   width: 100%;
+   height: 100%;
+}
+
+td button:hover {
+   cursor: pointer;
+}
+
+.delete {
+   background-color: rgb(197, 59, 59);
+   color: white;
+}
+
+.delete button {
+   color: white;
+   font-size: medium;
+}
+
+.edit {
+   background-color: rgb(201, 201, 14);
+}
+.edit button {
+   color: white;
+   font-size: medium;
+}
+
+section form div {
+   display: block;
+   text-align: center;
+   padding: 10px;
+}
+
+#submit {
+   margin: 10px;
+   width: 100px;
+   height: 40px;
+   background-color: #2b7952;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 5px 5px 10px rgb(94, 90, 119);
+}
+
+#submit:hover {
+   background-color: #155837;
+}
+
+@media (max-width: 1075px) {
+   body {
+      display: unset;
+   }
+   section {
+      width: 100%;
+   }
+   .right {
+      margin-top: 50px;
+   }
+}
+
+@media (max-width: 578px) {
+   body {
+      display: unset;
+   }
+   section {
+      width: 100%;
+      display: block;
+      height: unset;
+   }
+   .left {
+      align-items: unset;
+      justify-content: unset;
+   }
+   .form {
+      width: 100%;
+      font-size: small;
+   }
+   .right {
+      font-size: 0.5em;
+      margin-top: 25px;
+   }
+   td,
+   th,
+   table button {
+      font-size: 1.1em;
+   }
+}

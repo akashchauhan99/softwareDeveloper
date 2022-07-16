@@ -1,0 +1,91 @@
+{% set title = 'Sign Up' %} {% set admin = false %} {% extends 'base.html' %} {%
+block content %}
+<div class="sign-up">
+   <label class="sign-up-product"> {{ product.name }} </label>
+   <h2>
+      Sign up for {{ plan.name }} &mdash; {{ plan.amount }} / {% if
+      (plan.interval_count > 1) %} {{ plan.interval_count }} {{ plan.interval
+      }}s {% else %} {{ plan.interval }} {% endif %}
+   </h2>
+   {% if success %}
+   <div>
+      <p>
+         Your payment was successful. Congrats, you've successfully signed up!
+      </p>
+   </div>
+   {% elif error %}
+   <div>
+      <p>Your payment was unsuccessful. Please try again.</p>
+   </div>
+   {% else %}
+   <div class="sign-up-container">
+      <form action="/processPayment" method="POST" id="payment-form">
+         <input type="hidden" value="{{ product.name }}" name="productName" />
+         <input type="hidden" value="{{ plan.id }}" name="planId" />
+         <input type="hidden" value="{{ plan.amount }}" name="planAmount" />
+         <input type="hidden" value="{{ plan.name }}" name="planName" />
+         <input type="hidden" value="{{ plan.interval }}" name="planInterval" />
+         <input
+            type="hidden"
+            value="{{ plan.interval_count }}"
+            name="planIntervalCount"
+         />
+
+         <label> Email Address </label>
+         <input placeholder="Your Email Address" name="customerEmail" />
+         <div class="form-row">
+            <label for="card-element"> Credit or debit card </label>
+            <div id="card-element">
+               <!-- A Stripe Elements instance will be mounted here -->
+            </div>
+
+            <!-- Any error messages will be mounted here -->
+            <div id="card-errors" role="alert"></div>
+         </div>
+
+         <input class="btn" type="submit" value="Pay {{ plan.amount }}" />
+      </form>
+   </div>
+   {% endif %}
+</div>
+<script>
+   var stripe = Stripe(
+      'pk_test_51JKcYDSFnnspq72lT28SSQ5b0kVbtvnkS9fDNtu54aLZCCPUnwuAhuUkTzQaY1zUheWVFIoiaA81M13WNYtGNxPk00hDqumgts'
+   )
+   var elements = stripe.elements()
+
+   /* Custom styling can be passed to options when creating an Element */
+   var style = {
+      base: {
+         fontSize: '16px',
+         '::placeholder': { color: '#aab7c4' },
+         fontFamily: '"Open Sans", "Helvetica", sans-serif',
+         fontSmoothing: 'antialiased'
+      },
+      invalid: {
+         color: '#fa755a',
+         iconColor: '#fa755a'
+      }
+   }
+   /* Create a Stripe Elements instance
+   and mount to the div with the id 'card-element' */
+
+   var card = elements.create('card', { style: style })
+
+   card.mount('#card-element')
+
+   /* Handle validation errors */
+   card.addEventListener('change', (event) => {
+      let displayError = document.getElementById('card-errors')
+
+      if (event.error) {
+         displayError.textContent = event.error.message
+      } else {
+         displayError.textContent = ''
+      }
+   })
+
+   let form = document.getElementById('payment-form')
+   form.addEventListener('submit', function (event) {})
+</script>
+// view rawsignUp.html hosted with ❤ by GitHub

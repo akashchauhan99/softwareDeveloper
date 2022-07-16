@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function bob(message) {
+            if (message.charAt(message.length - 1) == '?') {
+               return 'Sure.'
+            } else if (message == message.toUpperCase()) {
+               return 'Whoa, chill out!'
+            } else if (message == '') {
+               return 'Fine. Be that way!'
+            } else if (
+               message.charAt(message.length - 1) == '?' &&
+               message == message
+            ) {
+               return 'Calm down, I know what I am doing!'
+            } else {
+               return 'Whatever'
+            }
+         }
+         console.log(bob('How are you?'))
+         console.log(bob('YELL AT HIM'))
+         console.log(bob('yell at?'))
+         console.log(bob(''))
+         console.log(bob('How are you'))
+      </script>
+   </body>
+</html>

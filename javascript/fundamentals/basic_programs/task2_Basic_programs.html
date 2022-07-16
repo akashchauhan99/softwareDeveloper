@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task 23-june-2021</title>
+   </head>
+   <body>
+      <h2>1. String is Palindrome or Not</h2>
+      <h2>2. Convert Decimal to Binary</h2>
+      <h2>3. ASCII Value of Character Using charCodeAt()</h2>
+      <h2>4. ASCII Value of Character Using codePointAt()</h2>
+      <h2>5. Sort Words in Alphabetical Order</h2>
+      <h2>6. Replace Characters of a String</h2>
+      <h2>7. Reverse a String</h2>
+      <h2>8. Using object literal</h2>
+      <h2>9. Check the Number of Occurrences of a Character in the String</h2>
+      <h2>10. Convert the First Letter of a String into UpperCase</h2>
+      <h2>11. Count the Number of Vowels in a String</h2>
+      <h2>12. remove a property from an object</h2>
+      <h2>
+         13. Check Whether a String Starts and Ends With Certain Characters
+      </h2>
+      <h2>14. Check if a Key Exists in an Object</h2>
+      <h2>15. Clone a JS Object</h2>
+      <h2>16. Loop Through Object Using for...in</h2>
+      <h2>17. Merge Property of Two Objects</h2>
+      <h2>18. Count the Number of Keys/Properties in an Object</h2>
+      <h2>19. JavaScript parseInt()</h2>
+      <h2>20. Arrow function in an object</h2>
+      <h2>21. Generate Random Strings</h2>
+      <h2>22. Check if a String Starts With Another String</h2>
+      <h2>23. Program to Trim a String</h2>
+      <h2>24. Convert Object to String</h2>
+      <h2>25. Remove a char from a String</h2>
+      <h2>26. String to Base64</h2>
+      <h2>27. Base64 to a string</h2>
+      <h2>28. Program to Perform Case Insensitive String Comparison</h2>
+      <h2>29. Pyramid star pattern in javascript</h2>
+      <h2>30. Reversed pyramid star pattern</h2>
+
+      <script>
+         // 1. String is Palindrome or Not
+         function checkPalindrome(str) {
+            // find the length of a string
+            const len = string.length
+
+            // loop through half of the string
+            for (let i = 0; i < len / 2; i++) {
+               // check if first and last string are same
+               if (string[i] !== string[len - 1 - i]) {
+                  return 'It is not a palindrome'
+               }
+            }
+            return 'It is a palindrome'
+         }
+         // const string = prompt('Enter a string: ')
+         // const value = checkPalindrome(string)
+         // document.write(value)
+
+         // 2. Convert Decimal to Binary
+         function convertToBinary(x) {
+            let bin = 0
+            let rem,
+               i = 1,
+               step = 1
+            while (x != 0) {
+               rem = x % 2
+               x = parseInt(x / 2)
+               bin = bin + rem * i
+               i = i * 10
+            }
+            document.write(`Binary: ${bin}`)
+         }
+         // let number = prompt('Enter a decimal number: ')
+         // convertToBinary(number)
+
+         // 3. ASCII Value of Character Using charCodeAt()
+         // const stringCC = prompt('Enter a character: ')
+         // convert into ASCII value
+         // const resultCC = stringCC.charCodeAt(0)
+         // document.write('The ASCII value is: ', resultCC)
+
+         // 4. ASCII Value of Character Using codePointAt()
+         // const stringCP = prompt('Enter a character: ')
+         // convert into ASCII value
+         // const resultCP = stringCP.codePointAt(0)
+         // document.write('The ASCII value is: ', resultCP)
+
+         // 5. Sort Words in Alphabetical Order
+         function Order(Sentence) {
+            const words = Sentence.split(' ')
+            words.sort()
+            document.write(words)
+         }
+         // const string = prompt('Enter a sentence: ')
+         // Order(string)
+
+         // 6. Replace Characters of a String
+         // function change(str) {
+         //    document.write('old: ', str, '<br>')
+         //    const newText = str.replace('red', 'blue')
+         //    document.write('new: ', newText)
+         // }
+         // change('Mr Red has a red house and a red car')
+
+         // 7. Reverse a String
+         function reverseString(str) {
+            let newString = ''
+            for (let i = str.length - 1; i >= 0; i--) {
+               newString += str[i]
+            }
+            return newString
+         }
+         // let string = prompt('Enter a string: ')
+         // let result = reverseString(string)
+         // document.write(result)
+
+         // 8. Using object literal
+         let person = {
+            name: 'ABC',
+            age: 22,
+            hobbies: ['reading', 'games', 'coding'],
+            greet: function () {
+               document.write('Hello everyone.')
+            },
+            score: {
+               maths: 90,
+               science: 80
+            }
+         }
+
+         // document.write(typeof person, '<br>')
+         // document.write(person.name, '<br>')
+         // document.write(person.hobbies, '<br>')
+         // person.greet()
+         // document.write('<br>', person.score.science)
+
+         // 9. Check the Number of Occurrences of a Character in the String
+         function countString(str, letter) {
+            let count = 0
+            for (let i = 0; i < str.length; i++) {
+               if (str.charAt(i) == letter) {
+                  count += 1
+               }
+            }
+            return count
+         }
+         // const string = prompt('Enter a string: ')
+         // let letterToCheck = prompt('Enter a letter to check: ')
+         // let result = countString(string, letterToCheck)
+         // document.write(result)
+
+         // 10. Convert the First Letter of a String into UpperCase
+         function capital(str) {
+            let newstr = str.replace(str[0], str[0].toUpperCase())
+            return newstr
+         }
+         // let string = prompt('Enter the string')
+         // let result = capital(string)
+         // document.write(result)
+
+         // 11. Count the Number of Vowels in a String
+         function countVowel(str) {
+            const vowel = ['a', 'e', 'i', 'o', 'u']
+            let count = 0
+            for (let vowels of str.toLowerCase()) {
+               if (vowel.includes(vowels)) {
+                  count++
+               }
+            }
+            return count
+         }
+         // let string = prompt('Enter a string: ')
+         // let result = countVowel(string)
+         // document.write(result)
+
+         // 12. remove a property from an object
+         let student1 = {
+            name: 'John',
+            age: 20,
+            hobbies: ['reading', 'games', 'coding'],
+            greet: function () {
+               document.write('Hello everyone.')
+            },
+            score: {
+               maths: 90,
+               science: 80
+            }
+         }
+         // delete student1.greet
+         // delete student1['score']
+         // document.write(student1)
+
+         // 13. Check Whether a String Starts and Ends With Certain Characters
+         function checkStr(str, start, end) {
+            if (str.startsWith(start) && str.endsWith(end)) {
+               document.write('Yes')
+            } else {
+               document.write('No')
+            }
+         }
+         // let string = prompt('Enter a string: ')
+         // let start = prompt('Enter start char: ')
+         // let end = prompt('Enter end char: ')
+         // checkStr(string, start, end)
+
+         // 14. Check if a Key Exists in an Object
+         let person2 = {
+            id: 1,
+            name: 'John',
+            age: 23
+         }
+         let hasKey = 'id' in person2
+
+         // if (hasKey) {
+         //    document.write('The key exists.')
+         // } else {
+         //    document.write('The key does not exist.')
+         // }
+
+         // 15. Clone a JS Object
+         let person1 = {
+            name: 'ABC',
+            age: 21
+         }
+         // let copy = person1
+         // document.write(person1.name)
+         // document.write(copy.name)
+
+         // 16. Loop Through Object Using for...in
+         let student = {
+            name: 'ABC',
+            age: 22,
+            hobbies: ['reading', 'games', 'coding']
+         }
+         // for (let key in student) {
+         //    let value
+         //    value = student[key]
+         //    document.write(key, ' - ', value, '<br>')
+         // }
+
+         // 17. Merge Property of Two Objects
+         //Object 1
+         let obj1 = {
+            name: 'ABC',
+            age: 22
+         }
+         // Object 2
+         let obj2 = {
+            gender: 'male'
+         }
+
+         // let merge = { ...obj1, ...obj2 }
+         // document.write(obj1)
+         // document.write(obj2)
+         // document.write(merge)
+
+         // 18. Count the Number of Keys/Properties in an Object
+         let student2 = {
+            name: 'John',
+            age: 20,
+            hobbies: ['reading', 'games', 'coding'],
+            score: {
+               maths: 22,
+               English: 45
+            }
+         }
+         let count = 0
+         for (let key in student2) {
+            ++count
+         }
+         // document.write(count)
+
+         // 19. JavaScript parseInt()
+         /*parseInt(String, Radix)
+          * Radix shows the number format
+          */
+         // var test = parseInt('243', 8)
+         // document.write(test)
+
+         // 20. Arrow function in an object
+         let user = {
+            firstName: 'Ilya',
+            sayHi() {
+               // function arrow() {
+               //    firstName = 'ABC'
+               //    alert(this.firstName)
+               // }
+               // arrow()
+               alert('Sayhi block')
+            },
+            arrow() {
+               alert('Array Block')
+            }
+         }
+         // user.sayHi()
+         // user.arrow()
+         // cop = user
+         // cop.sayHi()
+         // s = '5.5'
+         // document.write(typeof s)
+
+         // 21. Generate Random Strings
+         function generateRandomString(len) {
+            const characters =
+               'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+            let result = ' '
+            const charLength = characters.length
+            for (let i = 0; i < len; i++) {
+               result += characters.charAt(
+                  Math.floor(Math.random() * charLength)
+               )
+            }
+            return result
+         }
+         // document.write(generateRandomString(5))
+
+         // 22. Check if a String Starts With Another String
+         function checkString(str, startString) {
+            if (str.startsWith(startString)) {
+               document.write('Yes')
+            } else {
+               document.write('No')
+            }
+         }
+         // let originalStr = prompt('Enter the String')
+         // let StartStr = prompt('Enter the starting')
+         // checkString(originalStr, StartStr)
+
+         // 23. Program to Trim a String
+         let string = '      Hello   6      World       '
+         let result = string.trim()
+         // document.write(result)
+
+         // 24. Convert Object to String
+         let objToString = {
+            name: 'ABC',
+            age: 21
+         }
+         // let res1 = String(objToString)
+         // let res2 = String(objToString['name'])
+         // let res3 = String(objToString['age'])
+         // document.write(res1, '<br>', res2, '<br>', res3)
+
+         // 25. Remove a char from a String
+         function replaceChar(str, chr) {
+            let splitString = str.replace(chr, '')
+            document.write(splitString)
+         }
+         // let repStr = prompt('Enter the String')
+         // let repChar = prompt('Enter a char you want to replace')
+         // replaceChar(repStr, repChar)
+
+         // 26. string to Base64.
+         const s_to_b64 = 'Hello World'
+
+         const result_s_to_b64 = window.btoa(s_to_b64)
+         // document.write(result_s_to_b64, '<br>')
+
+         // 27. Base64 to a string.
+         const b64_to_s = 'SGVsbG8gV29ybGQ='
+
+         const result_b64_to_s = window.atob(b64_to_s)
+         // document.write(result_b64_to_s)
+
+         // 28. Program to Perform Case Insensitive String Comparison
+         const string1 = 'Hello World'
+         const string2 = 'hello'
+         const resultInsensitive =
+            string1.toUpperCase() === string2.toUpperCase()
+
+         // if (resultInsensitive) {
+         //    document.write('The strings are similar.')
+         // } else {
+         //    document.write('The strings are not similar.')
+         // }
+
+         // 29. Pyramid star pattern in javascript
+         // let nPyramid = parseInt(prompt('Enter the length of pyramid')) // you can take input from prompt or change the value
+         let strPyramid = ''
+         for (let i = 1; i <= nPyramid; i++) {
+            for (let j = 1; j <= nPyramid - i; j++) {
+               strPyramid += ' '
+            }
+            // printing star
+            for (let k = 0; k < 2 * i - 1; k++) {
+               strPyramid += '*'
+            }
+            strPyramid += '\n'
+         }
+         // console.log(strPyramid)
+
+         // 30. Reversed pyramid star pattern
+         // let nRevPyramid = parseInt(prompt('Enter the length of pyramid')) // you can take input from prompt or change the value
+         let strRevPyramid = ''
+         for (let i = 0; i < nRevPyramid; i++) {
+            for (let j = 0; j < i; j++) {
+               strRevPyramid += ' '
+            }
+            // printing star
+            for (let k = 0; k < 2 * (nRevPyramid - i) - 1; k++) {
+               strRevPyramid += '*'
+            }
+            strRevPyramid += '\n'
+         }
+         // console.log(strRevPyramid)
+      </script>
+   </body>
+</html>

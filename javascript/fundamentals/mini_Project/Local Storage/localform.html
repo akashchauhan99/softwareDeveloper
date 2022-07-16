@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./loc.css" />
+      <title>Document</title>
+   </head>
+
+   <body>
+      <section class="left">
+         <div class="form">
+            <form class="regis" onsubmit="register(event)" id="form">
+               <h1>Register</h1>
+               <hr />
+               <fieldset>
+                  <legend><label for="fname">Full Name</label></legend>
+                  <input
+                     type="text"
+                     id="fname"
+                     placeholder="First Name"
+                     required
+                     pattern="[a-zA-Z\s]{2,36}"
+                     title="Enter a valid name between 2 to 36 character long"
+                  />
+               </fieldset>
+               <fieldset>
+                  <legend><label for="lname">Mobile No.</label></legend>
+                  <input
+                     type="text"
+                     id="lname"
+                     placeholder="Mobile Number"
+                     required
+                     pattern="[0-9]{10}"
+                     size="10"
+                     title="Enter Valid 10 Digit Number"
+                  />
+               </fieldset>
+               <fieldset>
+                  <legend><label for="email">Email</label></legend>
+                  <input type="email" id="email" placeholder="Email" required />
+               </fieldset>
+               <div>
+                  <input
+                     type="radio"
+                     name="gender"
+                     id="Male"
+                     value="Male"
+                     required
+                  />
+                  <label for="male" required>Male</label>
+                  <input
+                     type="radio"
+                     name="gender"
+                     id="Female"
+                     value="Female"
+                  />
+                  <label for="female">Female</label><br />
+                  <input type="submit" id="submit" />
+               </div>
+            </form>
+         </div>
+      </section>
+
+      <section class="right">
+         <table>
+            <thead>
+               <tr>
+                  <th>Firstname</th>
+                  <th>Mobile</th>
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th colspan="2">Options</th>
+               </tr>
+            </thead>
+            <tbody id="tuples"></tbody>
+         </table>
+      </section>
+   </body>
+   <script src="./loc.js"></script>
+</html>

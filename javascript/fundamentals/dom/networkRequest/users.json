@@ -1,0 +1,17 @@
+[
+   {
+      "id": 1002,
+      "username": "dcode",
+      "age": 30
+   },
+   {
+      "id": 1003,
+      "username": "other.user",
+      "age": 41
+   },
+   {
+      "id": 1004,
+      "username": "other.user.user",
+      "age": 51
+   }
+]

@@ -1,0 +1,28 @@
+h1 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+fieldset {
+   background-color: rgb(233, 181, 144);
+   border-radius: 5px;
+   padding: 10px;
+   margin: 10px;
+}
+
+button {
+   width: 100px;
+   height: 30px;
+   text-align: center;
+   padding: 5px;
+   margin: 5px;
+   background-color: rgb(206, 125, 67);
+   color: cornsilk;
+   border-radius: 10px;
+}

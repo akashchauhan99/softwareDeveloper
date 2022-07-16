@@ -1,0 +1,19 @@
+{
+   "compilerOptions": {
+     "sourceMap": true,
+     "target": "es2017",
+     "outDir": "./dist",
+     "baseUrl": "./src",
+     "experimentalDecorators": true,
+     "allowJs": true,
+     "alwaysStrict": true,
+     "noImplicitAny": true,
+     "types" : ["node"]
+   },
+   "include": [
+     "src/**/*.ts"
+   ],
+   "exclude": [
+     "node_modules"
+   ]
+ }

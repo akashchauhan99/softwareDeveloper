@@ -1,0 +1,92 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.form {
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FBDF69;
+    border-radius: 10px;
+}
+
+div {
+    padding: 10px;
+    display: block;
+    margin: 25px 25px 25px 25px;
+    text-align: center;
+}
+
+input[type='submit'] {
+    width: 110px;
+    height: 50px;
+    font-size: 1.6em;
+}
+
+select {
+    height: 50px;
+    width: 110px;
+    font-size: 1.7em;
+}
+
+#day {
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    background-color: #020F14;
+}
+#day:focus {
+    outline: none;
+    border: none;
+}
+
+label {
+    font-size: 2em;
+}
+
+.timeselect {
+    box-shadow: 5px 5px 5px #f8b10a;
+    display: inline-block;
+    color: white;
+    padding: 20px;
+    background-color: #54C5F7;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px black;
+}
+
+.timeselect select{
+    color: white;
+    margin: 10px;
+    border:none;
+    border-radius: 10px;
+    background-color: #020F14;
+    box-shadow: 5px 5px 5px black;
+    text-shadow: 2px 2px 2px black;
+}
+
+.timeselect select:focus {
+    outline: none;
+}
+
+.card {
+    height: 200px;
+    width: 400px;
+    background-color: bisque;
+    display: flex;
+    color: #020F14;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+ 
+input[type='submit'] {
+    margin-top: 5px;
+    padding: 2px;
+    border-radius: 10px;
+}

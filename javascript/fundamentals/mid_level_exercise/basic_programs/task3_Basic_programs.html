@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task 28-June-2021</title>
+   </head>
+   <body>
+      <h2>1. Object references and copying</h2>
+      <h2>2. Optional chaining '?.'</h2>
+      <h2>3. Interlinked objects</h2>
+      <h2>4. Map</h2>
+      <h2>5. Map Methods</h2>
+      <p>
+         Map is a collection of keyed data items, just like an Object. But the
+         main difference is that Map allows keys of any type.
+      </p>
+      <h2>6. Set</h2>
+      <h2>7. Set Methods</h2>
+      <p>
+         A Set is a special type collection – “set of values” (without keys),
+         where each value may occur only once.
+      </p>
+      <h2>8. Array</h2>
+      <h2>9. Array Methods</h2>
+      <h2>10. Program to Replace All Line Breaks</h2>
+      <h2>11. Display Date and Time</h2>
+      <h2>12. Program to Check Leap Year</h2>
+      <h2>13. Compare The Value of Two Dates</h2>
+      <h2>14. Create Countdown Timer</h2>
+      <h2>15. Remove Specific Item From an Array</h2>
+      <h2>16. Check if An Array Contains a Specified Value</h2>
+      <h2>17. Insert Item in an Array</h2>
+      <h2>18. Insert element in an array usinmg recurssion</h2>
+      <h2>19. Append an Object to An Array</h2>
+      <h2>20. Check if An Object is An Array</h2>
+      <h2>21. Object.keys, values, entries</h2>
+      <h2>22. Transforming objects</h2>
+      <h2>23. Sum the properties</h2>
+      <h2>24. JSON.stringify</h2>
+      <h2>25. Arrow Function</h2>
+      <script>
+         // 1. Object references and copying
+         let original = {
+            name: 'John',
+            age: 30,
+            actice: true
+         }
+
+         let clone = {} // the new empty object
+
+         // let's copy all user properties into it
+         for (let key in original) {
+            clone[key] = original[key]
+         }
+
+         // now clone is a fully independent object with the same content
+         // changed the data in it
+         clone.name = 'Pete'
+         clone.age = 25
+         clone.actice = false
+         // clone.name = prompt('Enter the name')
+         // clone.age = parseInt(prompt('Enter the age'))
+         // clone.actice = prompt('Enter user is active or not')
+
+         // document.write('original Data <br>')
+         // for (let us in original) {
+         //    document.write(original[us], '<br>')
+         // }
+
+         // document.write('Clone Data <br>')
+         // for (let cl in clone) {
+         //    document.write(clone[cl], '<br>')
+         // }
+
+         // 2. Optional chaining '?.'
+         // The optional chaining ?. is a safe way to access nested object properties, even if an intermediate property doesn’t exist.
+         let user = {} // user has no address
+         // let user = {
+         //    address: {
+         //       street: {
+         //          name: 'Yes'
+         //       }
+         //    }
+         // } // It'll print Yes
+
+         // alert(
+         //    user.address
+         //       ? user.address.street
+         //          ? user.address.street.name
+         //          : null
+         //       : null
+         // )
+
+         // 3. Interlinked objects
+         function marry(man, woman) {
+            woman.husband = man
+            man.wife = woman
+
+            return {
+               father: man,
+               mother: woman
+            }
+         }
+
+         let family = marry(
+            'john',
+            'Ann'
+            // {
+            //    name: 'John'
+            // },
+            // {
+            //    name: 'Ann'
+            // }
+         )
+         // document.write(family.father, '<br>', family.mother)
+
+         // 4. 5. Map
+         // let data = {
+         //    2: 'GHI',
+         //    3: 'JKL'
+         // }
+         let map = new Map()
+         // let test2 = { name: 'test2' }
+         // map.set(1, 'ABC')
+         // map.set('1', 'DEF')
+         // map.set(true, 'bool')
+         // map.set(test2)
+         // document.write(map.get(1), '<br>')
+         // document.write(map.get('1'), '<br>')
+         // document.write(map.get(true), '<br>')
+         // document.write(map.size, '<br>')
+         // // Keys of map
+         // for (let mapValue of map.keys()) {
+         //    document.write(mapValue, '<br>')
+         // }
+         // // Values of map
+         // for (let mapValue of map.values()) {
+         //    document.write(mapValue, '<br>')
+         // }
+         // // key and values of map
+         // for (let mapValue of map) {
+         //    document.write(mapValue, '<br>')
+         // }
+
+         // 6. 7. Set
+         let set = new Set()
+
+         let john = { name: 'John' }
+         let pete = { name: 'Pete' }
+         let mary = { name: 'Mary' }
+         let test = { name: 'Test' }
+
+         // visits, some users come multiple times
+         set.add(john)
+         set.add(pete)
+         set.add(mary)
+         set.add(john)
+         set.add(mary)
+         set.add(test)
+         set.add(test)
+
+         // set keeps only unique values
+         // document.write(set.size, '<br>')
+
+         // // Values of set
+         // for (let user of set) {
+         //    document.write(user.name, '<br>') // John (then Pete and Mary)
+         // }
+
+         // 8. 9. Array
+         // let arr = new Array()
+         let arr = [1, '1', 2n, 3, 4]
+         arr.push(1)
+         arr.push('abc')
+         arr.push(5n)
+         arr.push(8)
+         arr.push(9)
+         // document.write(arr, '<br>')
+         // document.write(typeof arr, '<br>')
+         // document.write(typeof arr[1], '<br>')
+         // document.write(typeof arr[2], '<br>')
+         // document.write(Array.isArray(arr), '<br>')
+         arr.pop()
+         // document.write(arr, '<br>')
+         arr.shift() //It'll shift left hand side
+         // document.write(arr, '<br>')
+         for (let array in arr) {
+            // document.write(arr[array], '<br>')
+         }
+
+         // 10. Program to Replace All Line Breaks
+         const newLineStr = `I am Learning JavaScript.
+                         JavaScript is fun.
+                         JavaScript is easy.`
+         const newLineresult = newLineStr
+            .split('\n')
+            .join(' remove new line from here')
+         // document.write(newLineresult)
+
+         // 11. Display Date and Time
+         const date = new Date(2021, 5, 28, 1, 39, 57)
+         const todayDate = date.toDateString()
+         const time = date.toLocaleTimeString()
+         // document.write('Date : ', date, '<br>')
+         // document.write('Today : ', todayDate, '<br>')
+         // document.write('Time : ', time, '<br>')
+
+         // 12. Program to Check Leap Year
+
+         function checkLeapYear(year) {
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+               document.write(year, ' is a leap year. <br>')
+            } else {
+               document.write(year, ' is not a leap year. <br>')
+            }
+         }
+         // checkLeapYear(2000)
+         // checkLeapYear(2001)
+         // checkLeapYear(2020)
+
+         // 13. Compare The Value of Two Dates
+         const d1 = new Date()
+         const d2 = new Date(2018, 2, 4, 6, 44, 1)
+         // document.write(d1, '<br>')
+         // document.write(d2, '<br>')
+
+         // // comparisons
+         // const compare1 = d1 < d2
+         // document.write(compare1, '<br>')
+
+         // const compare2 = d1 > d2
+         // document.write(compare2, '<br>')
+
+         // const compare3 = d1 <= d2
+         // document.write(compare3, '<br>')
+
+         // const compare4 = d1 >= d2
+         // document.write(compare4, '<br>')
+
+         // const compare5 = d1.getTime() === d2.getTime()
+         // document.write(compare5, '<br>')
+
+         // const compare6 = d1.getTime() !== d2.getTime()
+         // document.write(compare6, '<br>')
+
+         // 14. Create Countdown Timer
+         // for (let hr = 0; hr < 24; hr++) {
+         //    for (let min = 0; min < 60; min++) {
+         //       for (let s = 0; s < 60; s++) {
+         //          document.write(hr, ' Hour ', min, ' Min ', s, '<br>')
+         //       }
+         //    }
+         // }
+
+         // 15. Remove Specific Item From an Array
+         function removeItem(arr, item) {
+            let newArr = []
+            for (let i = 0; i < arr.length; i++) {
+               if (arr[i] !== item) {
+                  newArr.push(arr[i])
+               }
+            }
+            return newArr
+         }
+         // let remArr = [1, 2, 3, 4, 5]
+         // let resultRemArr = removeItem(remArr, 2)
+         // document.write(resultRemArr)
+
+         // 16. Check if An Array Contains a Specified Value
+         let containArray = [1, 2, 3, 4, 5]
+         let hasVal = containArray.indexOf(8) !== -1
+         // if (hasVal) {
+         //    document.write('Yes.<br>')
+         // } else {
+         //    document.write('No.<br>')
+         // }
+
+         // 17. Insert Item in an Array
+         function insertElement() {
+            let array = [1, 2, 3, 4]
+            // index to add to
+            let index = 3
+            // element that you want to add
+            let element = 8
+            for (let i = array.length; i > index; i--) {
+               //shift the elements that are greater than index
+               array[i] = array[i - 1]
+            }
+            // insert element at given index
+            array[index] = element
+            document.write(array)
+         }
+         // insertElement()
+
+         // 18. Insert element in an array usinmg recurssion
+         var count = 0
+         function addToArray(size) {
+            let arr = []
+            if (size == 0) {
+               return 0
+            } else {
+               arr.push(count)
+               count++
+               document.write(arr, '<br>')
+               return addToArray(size - 1)
+            }
+         }
+         // addToArray(100)
+
+         // 19. Append an Object to An Array
+         // function insertObject(arr, obj) {
+         //    arr.push(obj)
+         //    console.log(arr)
+         // }
+         // // original array
+         // let insertArray = [1, 2, 3]
+         // // object to add
+         // let insertObj = { x: 12, y: 8 }
+         // // call the function
+         // insertObject(insertArray, insertObj)
+
+         // 20. Check if An Object is An Array
+         function checkObject(arr) {
+            // check if arr is array
+            const result = Array.isArray(arr)
+
+            if (result) {
+               console.log(`[${arr}] is an array.`)
+            } else {
+               console.log(`${arr} is not an array.`)
+            }
+         }
+         const array = [1, 2, 3]
+         // call the function
+         // checkObject(array)
+
+         // 21. Object.keys, values, entries
+         // let users = {
+         //    name: 'ABC',
+         //    age: 21
+         // }
+         // for (let key of Object.keys(users)) {
+         //    document.write(key, ' ')
+         // }
+         // document.write('<br>')
+         // for (let value of Object.values(users)) {
+         //    document.write(value, ' ')
+         // }
+         // document.write('<br>')
+         // for (let key of Object.entries(users)) {
+         //    document.write(key, '<br>')
+         // }
+         // document.write('<br>')
+
+         // let testArray = [1, 2, 3, 4, 5]
+
+         // for (let key of Object.keys(testArray)) {
+         //    document.write(key, ' ')
+         // }
+         // document.write('<br>')
+         // for (let value of Object.values(testArray)) {
+         //    document.write(value, ' ')
+         // }
+         // document.write('<br>')
+         // for (let key of Object.entries(testArray)) {
+         //    document.write(key, '<br>')
+         // }
+
+         // 22. Transforming objects
+         let prices = {
+            banana: 1,
+            orange: 2,
+            meat: 8
+         }
+         let doublePrices = Object.fromEntries(
+            Object.entries(prices).map((entry) => [entry[0], entry[1] * 2])
+         )
+         // document.write(doublePrices.orange)
+
+         // 23. Sum the properties
+         let salaries = {
+            John: 100,
+            Pete: 300,
+            Mary: 250
+         }
+         function sumSalaries(sal) {
+            let sum = 0
+            for (let sal of Object.values(salaries)) {
+               sum += sal
+            }
+            return sum
+         }
+         // alert(sumSalaries(salaries))
+
+         // 24. JSON.stringify
+         let student = {
+            name: 'John',
+            age: 30,
+            isAdmin: false,
+            courses: ['html', 'css', 'js'],
+            wife: null
+         }
+         let jsonString = JSON.stringify(student)
+         // document.write(typeof jsonString, '<br>') // we've got a string!
+         // document.write(jsonString)
+
+         // 25. Arrow Function
+         let arrowAdd = (a, b) => a + b
+         document.write(arrowAdd(4, 2))
+      </script>
+   </body>
+</html>

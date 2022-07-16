@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Grade School</title>
+   </head>
+   <body>
+      <script>
+         class Grade {
+            constructor() {
+               this.database = new Map()
+            }
+
+            roster() {
+               const dbCopy = {}
+               for (let [grade, names] of this.database) {
+                  dbCopy[grade] = [...names]
+               }
+               return dbCopy
+            }
+
+            add(name, grade) {
+               this.removeNameFromDatabase(name)
+               let names = this.database.get(grade) || []
+               this.database.set(grade, [...names, name].sort())
+            }
+
+            removeNameFromDatabase(name) {
+               for (let [grade, names] of this.database) {
+                  this.database.set(
+                     grade,
+                     names.filter((n) => n !== name)
+                  )
+               }
+            }
+
+            grade(grade) {
+               let names = this.database.has(grade)
+                  ? this.database.get(grade)
+                  : []
+               return [...names]
+            }
+         }
+         let gra = new Grade()
+         gra.add('shyam', 1)
+         gra.add('ram', 2)
+         gra.add('vikas', 1)
+         console.log(gra.grade(2))
+         console.log(gra.roster())
+      </script>
+   </body>
+</html>

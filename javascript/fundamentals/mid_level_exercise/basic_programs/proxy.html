@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Proxy</title>
+   </head>
+   <body>
+      <script>
+         let person = {
+            firstname: 'Richards',
+            lastname: 'Hendricks',
+            age: 20
+         }
+         console.log(person)
+         console.log(person.firstname)
+         console.log('-------------------------')
+         let goodPerson = new Proxy(person, {
+            get: function (target, prop, receiver) {
+               console.log(prop + ' is being accessed')
+               if (prop === 'allowedtovote') {
+                  if (target.age >= 18) {
+                     return true
+                  } else {
+                     return false
+                  }
+               }
+               // return target[prop]
+               return Reflect.get(target, prop, receiver)
+            },
+            set: function (target, prop, value) {
+               if (prop === 'age' && value > 200) {
+                  throw new Error('Age is not valid')
+               }
+               // target[prop] = value
+               // return true
+               return Reflect.get(target, prop, value)
+            }
+         })
+
+         goodPerson.age = 17
+         console.log(goodPerson)
+         console.log(goodPerson.allowedtovote)
+      </script>
+   </body>
+</html>

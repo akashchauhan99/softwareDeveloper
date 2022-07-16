@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const str = 'The quick brown fox jumps over the lazy dog'
+         function pangram(str) {
+            str = str.toLowerCase()
+            let alphabets = 'abcdefghijklmnopqrstuvwxyz'
+            let alphaArr = alphabets.split('')
+            for (let i = 0; i < str.length; i++) {
+               let index = alphaArr.indexOf(str[i])
+               if (index !== -1) {
+                  alphaArr.splice(index, 1)
+               }
+            }
+            return !alphaArr.length
+         }
+         console.log(pangram(str))
+      </script>
+   </body>
+</html>

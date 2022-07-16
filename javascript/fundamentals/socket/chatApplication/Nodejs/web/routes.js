@@ -1,0 +1,1 @@
+this.app.post('/register', routeHandler.registerRouteHandler)

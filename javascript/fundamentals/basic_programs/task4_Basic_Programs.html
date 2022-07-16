@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task4 29-june-2021</title>
+   </head>
+   <body>
+      <h2>1. Check if An Object is An Array</h2>
+      <h2>2. Program to Add Element to Start of an Array</h2>
+      <h2>3. Program to Remove Duplicates From Array</h2>
+      <h2>4. Program to Merge Two Arrays and Remove Duplicate Items</h2>
+      <h2>5. Program to Sort Array of Objects by Property Values</h2>
+      <h2>6. Program to Create Two Dimensional Array</h2>
+      <h2>7. Program to Extract Given Property Values from Objects as Array</h2>
+      <h2>8. Program to Compare Elements of Two Arrays</h2>
+      <h2>9. Get Random Item From an Array</h2>
+      <h2>10. Split Array into Smaller Chunks</h2>
+      <h2>11. function using new keyword</h2>
+      <h2>12. setTimeout</h2>
+      <h2>13. setInterval</h2>
+      <h2>14. Program to Get File Extension</h2>
+      <h2>15. Program To Check If A Variable Is undefined or null</h2>
+      <h2>16. Set a Default Parameter Value For a Function</h2>
+      <h2>17. Program to Illustrate Different Set Operations</h2>
+      <h2>17. Set Union Operation</h2>
+      <h2>18. Set Intersection Operation</h2>
+      <h2>19. Set Delete Operation</h2>
+      <h2>20. Get The Current URL</h2>
+      <h2>21. Check If a Variable is of Function Type</h2>
+      <h2>22. Program to Perform Function Overloading</h2>
+      <h2>23. Program to Implement a Stack</h2>
+      <h2>24. Program to Implement a Queue</h2>
+      <h2>25. Check if a Number is Float or Integer</h2>
+      <h2>26. Pass a Function as Parameter</h2>
+      <h2>27. Program to Convert Date to Number</h2>
+      <h2>28. calling arrow using sayhi</h2>
+      <h2>29. Getter</h2>
+      <h2>30. Setter</h2>
+      <script>
+         // 1. Check if An Object is An Array
+         function checkObject(arr) {
+            if (Array.isArray(arr)) {
+               document.write('It is an array.')
+            } else {
+               document.write('It is not an array.')
+            }
+         }
+         let checkArray = [1, 2, 3, 4]
+         // checkObject(checkArray)
+
+         // 2. Program to Add Element to Start of an Array
+         function addElement(arr, num) {
+            // adding new array element
+            // arr.unshift(num)
+            // array.splice(index, howmany, item1, ....., itemX)
+            // arr.splice(0, 0, num)
+            document.write(arr)
+         }
+         let addArray = [1, 2, 3]
+         let addNum = 5
+         // addElement(addArray, addNum)
+
+         // 3. Program to Remove Duplicates From Array
+         function getUnique(arr) {
+            let uniqueArr = []
+
+            // loop through array
+            for (let i of arr) {
+               if (uniqueArr.indexOf(i) === -1) {
+                  uniqueArr.push(i)
+               }
+            }
+            document.write(uniqueArr)
+         }
+         const dupArray = [1, 2, 3, 2, 3]
+         // getUnique(dupArray)
+
+         // 4. Program to Merge Two Arrays and Remove Duplicate Items
+         function getUniqueMerge(arr1, arr2) {
+            let arr = arr1.concat(arr2)
+            let uniqueArr = []
+            for (let i of arr) {
+               if (uniqueArr.indexOf(i) === -1) {
+                  uniqueArr.push(i)
+               }
+            }
+            document.write(uniqueArr)
+         }
+         let firstArray = [1, 2, 3, 4, 5]
+         let secondArray = [2, 3, 6, 7, 8, 1]
+         // getUniqueMerge(firstArray, secondArray)
+
+         // 5.Program to Sort Array of Objects by Property Values
+         function compareName(a, b) {
+            let name1 = a.name.toUpperCase()
+            let name2 = b.name.toUpperCase()
+
+            let comparison = 0
+            if (name1 > name2) {
+               comparison = 1
+            } else if (name1 < name2) {
+               comparison = -1
+            }
+            return comparison
+         }
+         let compStudent = [
+            { name: 'Sara', age: 24 },
+            { name: 'John', age: 24 },
+            { name: 'Jack', age: 25 }
+         ]
+         // document.write(compStudent.sort(compareName))
+
+         // 6. Program to Create Two Dimensional Array
+         function twoDimensionalArray(a, b) {
+            let newArr = []
+            for (let i = 0; i < a; i++) {
+               for (let j = 0; j < b; j++) {
+                  newArr[i] = []
+               }
+            }
+            for (let i = 0; i < a; i++) {
+               for (let j = 0; j < b; j++) {
+                  newArr[i][j] = i * j
+               }
+            }
+            return newArr
+         }
+         // console.log(twoDimensionalArray(3, 3))
+
+         // 7. Program to Extract Given Property Values from Objects as Array
+         function extractValue(arr, prop) {
+            // extract value from property
+            let extractedValue = arr.map(function (item) {
+               return item[prop]
+            })
+
+            return extractedValue
+         }
+         let objArray = [
+            { a: 1, b: 2 },
+            { a: 4, b: 5 },
+            { a: 8, b: 9 }
+         ]
+         const result = extractValue(objArray, 'b')
+         // console.log(result)
+
+         // 8. Program to Compare Elements of Two Arrays
+         function compElementsOfArray(arr1, arr2) {
+            if (arr1.length !== arr2.length) {
+               return false
+            } else {
+               let result = false
+               for (let i = 0; i < arr1.length; i++) {
+                  if (arr1[i] != arr2[i]) {
+                     return false
+                  } else {
+                     result = true
+                  }
+               }
+               return result
+            }
+         }
+         let array1 = [1, 3, 4, 8]
+         let array2 = [1, 3, 5, 8]
+         let compResult = compElementsOfArray(array1, array2)
+
+         // if result is true
+         // if (compResult) {
+         //    console.log('The arrays have the same elements.')
+         // } else {
+         //    console.log('The arrays have different elements.')
+         // }
+
+         // 9. Get Random Item From an Array
+         function getRandomitem(arr) {
+            let randomIndex = Math.floor(Math.random() * arr.length)
+            let item = arr[randomIndex]
+            return item
+         }
+         let itemArray = [1, 'hi', 2n, 8.8]
+         let randomresult = getRandomitem(itemArray)
+         // document.write(randomresult)
+
+         // 10. Split Array into Smaller Chunks
+         function splitIntoChunk(arr, chunk) {
+            for (let i = 0; i < arr.length; i += chunk) {
+               let tempArray = arr.slice(i, i + chunk)
+               console.log(tempArray)
+            }
+         }
+         let chunkArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+         let chunk = 2
+         // splitIntoChunk(chunkArray, chunk)
+
+         // 11. function using new keyword
+         let funcTest = new Function('a', 'b', 'c', 'return a+b+c')
+         // document.write(funcTest(1, 2, 3))
+
+         // 12. setTimeout
+         function testSetTimeout(phrase, who) {
+            alert(phrase + ', ' + who)
+         }
+         // setTimeout(testSetTimeout, 5000, 'Hello', 'John')
+
+         // 13. setInterval
+         // let timerId = setInterval(() => alert('tick'), 2000)
+
+         // 14. Program to Get File Extension
+         function getFileExtension(filename) {
+            // get file extension
+            const extension = filename.split('.').pop()
+            return extension
+         }
+         const result1 = getFileExtension('module.mp4')
+         // console.log(result1)
+         const result2 = getFileExtension('module.txt')
+         // console.log(result2)
+
+         // 15. Program To Check If A Variable Is undefined or null
+         function checkVariable(variable) {
+            if (variable == null && variable == undefined) {
+               document.write('The variable is undefined or null', '<br>')
+            } else {
+               document.write(
+                  'The variable is neither undefined nor null',
+                  '<br>'
+               )
+            }
+         }
+         let newVariable
+
+         // checkVariable(5)
+         // checkVariable('hello')
+         // checkVariable(null)
+         // checkVariable(newVariable)
+
+         // 16. Set a Default Parameter Value For a Function
+         function defaultSum(a = 2, b = 3) {
+            return a + b
+         }
+         // document.write(defaultSum(), '<br>')
+         // document.write(defaultSum(4, 5))
+
+         // 17. Program to Illustrate Different Set Operations
+         function union(a, b) {
+            let unionSet = new Set(a)
+            for (let i of b) {
+               unionSet.add(i)
+            }
+            return unionSet
+         }
+
+         // 18.
+         function intersection(setA, setB) {
+            let intersectionSet = new Set()
+
+            for (let i of setB) {
+               if (setA.has(i)) {
+                  intersectionSet.add(i)
+               }
+            }
+            return intersectionSet
+         }
+
+         // 19.
+         function del(b) {
+            for (let i of b) {
+               b.delete(i)
+            }
+            return b
+         }
+
+         const setA = new Set(['apple', 'mango', 'orange'])
+         const setB = new Set(['grapes', 'apple', 'banana'])
+
+         const resultUnion = union(setA, setB)
+         const resultIntersection = intersection(setA, setB)
+
+         // console.log(resultUnion)
+         // console.log(resultIntersection)
+         console.log(del(setB))
+
+         // 20. Get The Current URL
+         const url1 = window.location.href
+         const url2 = document.URL
+         // console.log(url1)
+         // console.log(url2)
+
+         // 21. Check If a Variable is of Function Type
+         function testVariable(variable) {
+            if (variable instanceof Function) {
+               console.log('The variable is of function type')
+            } else {
+               console.log('The variable is not of function type')
+            }
+         }
+         const count = true
+         const y = function () {
+            console.log('hello')
+         }
+         let x
+         // testVariable(count)
+         // testVariable(x)
+         // testVariable(y)
+
+         // 22. Program to Perform Function Overloading
+         function sum() {
+            if (arguments.length == 0) {
+               console.log('You have not passed any argument')
+            } else if (arguments.length == 1) {
+               console.log('Pass at least two arguments')
+            } else {
+               let resultSum = 0
+               let length = arguments.length
+               for (let i = 0; i < length; i++) {
+                  resultSum = resultSum + arguments[i]
+               }
+               console.log(resultSum)
+            }
+         }
+         // sum()
+         // sum(5)
+         // sum(5, 9)
+         // sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+         // 23. Program to Implement a Stack
+         class Stack {
+            constructor() {
+               this.items = []
+            }
+            add(element) {
+               return this.items.push(element)
+            }
+            remove() {
+               return this.items.pop()
+            }
+            peek() {
+               return this.items[this.items.length - 1]
+            }
+            isEmpty() {
+               return this.items.length == 0
+            }
+            size() {
+               return this.items.length
+            }
+            clear() {
+               this.items = []
+            }
+         }
+
+         // let stack = new Stack()
+         // stack.add(1)
+         // stack.add(2)
+         // stack.add(4)
+         // stack.add(8)
+         // console.log(stack.items)
+
+         // stack.remove()
+         // console.log(stack.items)
+
+         // console.log(stack.peek())
+
+         // console.log(stack.isEmpty())
+
+         // console.log(stack.size())
+
+         // stack.clear()
+         // console.log(stack.items)
+
+         // 24. Program to Implement a Queue
+         class Queue {
+            constructor() {
+               this.items = []
+            }
+
+            // add element to the queue
+            enqueue(element) {
+               return this.items.push(element)
+            }
+
+            // remove element from the queue
+            dequeue() {
+               if (this.items.length > 0) {
+                  return this.items.shift()
+               }
+            }
+
+            // view the last element
+            peek() {
+               return this.items[this.items.length - 1]
+            }
+
+            // check if the queue is empty
+            isEmpty() {
+               return this.items.length == 0
+            }
+
+            // the size of the queue
+            size() {
+               return this.items.length
+            }
+
+            // empty the queue
+            clear() {
+               this.items = []
+            }
+         }
+
+         // let queue = new Queue()
+         // queue.enqueue(1)
+         // queue.enqueue(2)
+         // queue.enqueue(4)
+         // queue.enqueue(8)
+         // console.log(queue.items)
+
+         // queue.dequeue()
+         // console.log(queue.items)
+
+         // console.log(queue.peek())
+
+         // console.log(queue.isEmpty())
+
+         // console.log(queue.size())
+
+         // queue.clear()
+         // console.log(queue.items)
+
+         // 25. Check if a Number is Float or Integer
+         function checkNumber(x) {
+            // check if the passed value is a number
+            if (typeof x == 'number' && !isNaN(x)) {
+               // check if it is integer
+               if (Number.isInteger(x)) {
+                  console.log(`${x} is integer.`)
+               } else {
+                  console.log(`${x} is a float value.`)
+               }
+            } else {
+               console.log(`${x} is not a number`)
+            }
+         }
+
+         // checkNumber('hello')
+         // checkNumber(4.4)
+         // checkNumber(34)
+         // checkNumber(-3.4)
+         // checkNumber(NaN)
+
+         // 26. Pass a Function as Parameter
+         function greet() {
+            return 'Hello'
+         }
+
+         // passing function greet() as a parameter
+         function name(user, func) {
+            // accessing passed function
+            const message = func()
+
+            console.log(`${message} ${user}`)
+         }
+
+         // name('John', greet)
+         // name('Jack', greet)
+         // name('Sara', greet)
+
+         // 27. Program to Convert Date to Number
+         const d1 = new Date()
+         // console.log(d1)
+         // converting to number
+         const num = d1.getTime()
+         // console.log(num)
+
+         // 28. calling arrow using sayhi
+         let user = {
+            firstname: 'ABC',
+            sayHI() {
+               alert('sayhi block')
+            }
+         }
+         function arrow() {
+            alert(this.firstname)
+            this.sayHI()
+         }
+         let funcUser = arrow.bind(user)
+         // funcUser()
+
+         // 29. Getter
+         let getUser = {
+            name: 'ABC',
+            surname: 'DEF',
+            get fullName() {
+               return `${this.name} ${this.surname}`
+            }
+         }
+         // alert(getUser.fullName)
+
+         // 30. Setter
+         let setUser = {
+            name: 'ABC',
+            surname: 'DEF',
+            get fullName() {
+               return `${this.name} ${this.surname}`
+            },
+            set fullName(value) {
+               ;[this.name, this.surname] = value.split(' ')
+            }
+         }
+         setUser.fullName = 'John Smith'
+         // alert(setUser.fullName)
+      </script>
+   </body>
+</html>

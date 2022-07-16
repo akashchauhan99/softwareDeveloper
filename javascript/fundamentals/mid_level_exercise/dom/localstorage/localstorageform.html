@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Local Storage</title>
+      <link rel="stylesheet" href="./localstorageform.css" />
+   </head>
+   <body>
+      <section class="left">
+         <div class="form">
+            <form class="regis" onsubmit="register(event)" id="form">
+               <h1>Register</h1>
+               <hr />
+               <fieldset>
+                  <legend><label for="fname">First name</label></legend>
+                  <input
+                     type="text"
+                     id="fname"
+                     placeholder="First Name"
+                     required
+                     pattern="[a-zA-Z\s]{2,36}"
+                     title="Enter a valid First name
+                  between 2 to 36 character long"
+                  />
+               </fieldset>
+               <fieldset>
+                  <legend><label for="lname">Last name</label></legend>
+                  <input
+                     type="text"
+                     id="lname"
+                     placeholder="Last Name"
+                     required
+                     pattern="[a-zA-Z\s]{2,36}"
+                     title="Enter a valid Last name
+                  between 2 to 36 character long"
+                  />
+               </fieldset>
+               <fieldset>
+                  <legend><label for="mobile">Mobile No.</label></legend>
+                  <input
+                     type="text"
+                     id="mobile"
+                     placeholder="Mobile No."
+                     required
+                     pattern="[0-9]{10}"
+                     title="Enter Valid 10 Digit Number"
+                  />
+               </fieldset>
+               <fieldset>
+                  <legend><label for="email">Email</label></legend>
+                  <input type="email" id="email" placeholder="Email" required />
+               </fieldset>
+               <div>
+                  <input
+                     type="radio"
+                     name="gender"
+                     id="Male"
+                     value="Male"
+                     required
+                  />
+                  <label for="male" required>Male</label>
+                  <input
+                     type="radio"
+                     name="gender"
+                     id="Female"
+                     value="Female"
+                  />
+                  <label for="female">Female</label><br />
+                  <input type="submit" id="submit" />
+               </div>
+            </form>
+         </div>
+      </section>
+
+      <section class="right">
+         <table>
+            <thead>
+               <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Mobile Number</th>
+                  <th>Email</th>
+                  <th>Gender</th>
+                  <th colspan="2">Options</th>
+               </tr>
+            </thead>
+            <tbody id="tuples"></tbody>
+         </table>
+      </section>
+      <script src="./localstorageform.js"></script>
+   </body>
+</html>

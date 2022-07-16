@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./shop.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section class="form">
+        <div class="container">
+
+            <select name="day" id="day">
+                <option value="1">sunday</option>
+                <option value="2" selected>monday</option>
+                <option value="3">tuesday</option>
+                <option value="4">wednesday</option>
+                <option value="5">thursday</option>
+                <option value="6">friday</option>
+                <option value="7">saturday</option>
+            </select>
+            <br>
+
+            <div class="timeselect">
+                <label for="shour">START: </label>
+                <select id='shour' required>
+                    <script>
+                        let shour = document.getElementById('shour')
+                        for (let i = 0; i < 24; i++) {
+                            shour.innerHTML += `<option value=${i}>${i} Hrs</option>`
+                        }
+                    </script>
+                </select>
+                <select id='smin'>
+                    <script>
+                        let smin = document.getElementById('smin')
+                        for (let i = 0; i < 60; i++) {
+                            smin.innerHTML += `<option value=${i}>${i} Min</option>`
+                        }
+                    </script>
+                </select><br>
+                <label for="ehour">END:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <select id='ehour'>
+                    <script>
+                        let ehour = document.getElementById('ehour')
+                        for (let i = 0; i < 24; i++) {
+                            ehour.innerHTML += `<option value=${i}>${i} Hrs</option>`
+                        }
+                    </script>
+                </select>
+                <select id='emin'>
+                    <script>
+                        let emin = document.getElementById('emin')
+                        for (let i = 0; i < 60; i++) {
+                            emin.innerHTML += `<option value=${i}>${i} Min</option>`
+                        }
+                    </script>
+                </select><br>
+                <input type="submit" value="SUBMIT" onclick="calc()">
+            </div>
+            <hr>
+
+            <div class="card">
+                <p id="message"></p>
+            </div>
+
+        </div>
+    </section>
+</body>
+<script src="./shop.js"></script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Examples</title>
+   </head>
+   <body>
+      <h2>1. eval</h2>
+      <h2>2. currying</h2>
+      <script>
+         // 1. eval
+         // let code = 'alert("Hello")'
+         // eval(code)
+         // let x = 5
+         // eval('x = 10+x')
+         // alert(x)
+
+         // 2. currying
+         function curry(f) {
+            // curry(f) does the currying transform
+            return function (a) {
+               return function (b) {
+                  return f(a, b)
+               }
+            }
+         }
+         // // usage
+         function sum(a, b) {
+            return a + b
+         }
+
+         let curriedSum = curry(sum)
+         alert(curriedSum(1)(4))
+      </script>
+   </body>
+</html>

@@ -1,0 +1,2 @@
+Hello world! I am create by write file sync.
+I am appended by append file sync

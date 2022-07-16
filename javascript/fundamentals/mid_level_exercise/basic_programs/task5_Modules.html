@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task 5 30 june</title>
+   </head>
+   <body>
+      <script>
+         // 1. Prototypal inheritance
+         // let animal = {
+         //    eats: true
+         // }
+         // let rabbit = {
+         //    jumps: true
+         // }
+
+         // rabbit.__proto__ = animal
+         // console.log(rabbit.jumps, rabbit.eats)
+         // let animal = {
+         //    eats: true,
+         //    walk() {
+         //       alert('Animal walk')
+         //    }
+         // }
+
+         // let rabbit = {
+         //    jumps: true,
+         //    __proto__: animal
+         // }
+
+         // // walk is taken from the prototype
+         // rabbit.walk()
+
+         // 2. F.prototype
+         // function Rabbit(name) {
+         //    this.name = name
+         //    alert(name)
+         // }
+
+         // let rabbit = new Rabbit('White Rabbit')
+
+         // let rabbit2 = new rabbit.constructor('Black Rabbit')
+
+         // 3. Native prototypes
+
+         if (!String.prototype.repeat) {
+            // if there's no such method
+            // add it to the prototype
+
+            String.prototype.repeat = function (n) {
+               // repeat the string n times
+
+               // actually, the code should be a little bit more complex than that
+               // (the full algorithm is in the specification)
+               // but even an imperfect polyfill is often considered good enough
+               return new Array(n + 1).join(this)
+            }
+         }
+
+         alert('La'.repeat(4))
+      </script>
+   </body>
+</html>

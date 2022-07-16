@@ -1,0 +1,37 @@
+* {
+   padding: 0px;
+   margin: 0px;
+}
+body {
+   background-color: tomato;
+}
+form {
+   display: block;
+
+   text-align: center;
+}
+
+form input,
+form #btn {
+   padding: 10px;
+   margin: 10px;
+   border-radius: 5px;
+}
+#get-btn {
+   background-color: rgb(196, 193, 42);
+   color: white;
+}
+#post-btn {
+   background-color: rgb(235, 70, 42);
+   color: white;
+}
+
+#btn:hover {
+   cursor: pointer;
+   background-color: rgb(247, 57, 23);
+   border: none;
+}
+
+input:focus {
+   background-color: rgb(241, 198, 190);
+}

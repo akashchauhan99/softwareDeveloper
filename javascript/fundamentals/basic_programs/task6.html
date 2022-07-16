@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task6 1 july</title>
+   </head>
+   <body>
+      <h2>1. Functional Instantiation</h2>
+      <h2>2. Functional Instantiation with Shared Methods</h2>
+      <h2>3. Object.create</h2>
+      <p>
+         Object.create allows you to create an object which will delegate to
+         another object on failed lookups
+      </p>
+      <h2>4. Functional Instantiation with Shared Methods and Object.create</h2>
+      <h2>5. Prototypal Instantiation</h2>
+      <h2>6. Pseudoclassical Instantiation</h2>
+      <h2>7. Class</h2>
+      <h2>8. Array Methods</h2>
+      <h2>9. Static Methods</h2>
+      <h2>10. Getting the prototype of an object</h2>
+      <h2>11. Determining if a property lives on the prototype</h2>
+      <h2>12. Check if an object is an instance of a Class</h2>
+      <h2>13. What is a class?</h2>
+      <h2>14. Class inheritance</h2>
+      <h2>15. Static properties and methods</h2>
+      <h2>16. Extending built-in classes</h2>
+      <script>
+         // 1. Functional Instantiation
+         // function Animal(name, energy) {
+         //    let animal = {}
+         //    animal.name = name
+         //    animal.energy = energy
+
+         //    animal.eat = function (amount) {
+         //       console.log(`${this.name} is eating.`)
+         //       this.energy += amount
+         //    }
+
+         //    animal.sleep = function (length) {
+         //       console.log(`${this.name} is sleeping.`)
+         //       this.energy += length
+         //    }
+
+         //    animal.play = function (length) {
+         //       console.log(`${this.name} is playing.`)
+         //       this.energy -= length
+         //    }
+         //    return animal
+         // }
+         // const leo = Animal('Leo', 7)
+         // const snoop = Animal('Snoop', 10)
+         // leo.eat()
+         // leo.sleep()
+         // leo.play()
+         // snoop.eat()
+         // snoop.sleep()
+         // snoop.play()
+
+         // 2. Functional Instantiation with Shared Methods
+         // const animatMethods = {
+         //    eat(amount) {
+         //       console.log(`${this.name} is eating.`)
+         //       this.energy += amount
+         //    },
+         //    sleep(length) {
+         //       console.log(`${this.name} is sleeping.`)
+         //       this.energy += length
+         //    },
+         //    play(length) {
+         //       console.log(`${this.name} is playing.`)
+         //       this.energy -= length
+         //    }
+         // }
+         // function Animal(name, energy) {
+         //    let animal = {}
+         //    animal.name = name
+         //    animal.energy = energy
+         //    animal.eat = animatMethods.eat
+         //    animal.sleep = animatMethods.sleep
+         //    animal.play = animatMethods.play
+
+         //    return animal
+         // }
+         // const leo = Animal('Leo', 7)
+         // const snoop = Animal('Snoop', 10)
+         // snoop.eat()
+
+         // 3. Object.create
+         const parent = {
+            name: 'Stacey',
+            age: 35,
+            heritage: 'Irish'
+         }
+         // Object.create allows you to create an object which will delegate to another object on failed lookups
+         const child = Object.create(parent)
+         child.name = 'Ryan'
+         child.age = 7
+         // console.log(child.name)
+         // console.log(child.age)
+         // console.log(child.heritage)
+
+         // 4. Functional Instantiation with Shared Methods and Object.create
+         // const animatMethods = {
+         //    eat(amount) {
+         //       console.log(`${this.name} is eating.`)
+         //       this.energy += amount
+         //    },
+         //    sleep(length) {
+         //       console.log(`${this.name} is sleeping.`)
+         //       this.energy += length
+         //    },
+         //    play(length) {
+         //       console.log(`${this.name} is playing.`)
+         //       this.energy -= length
+         //    }
+         // }
+         // function Animal(name, energy) {
+         //    let animal = Object.create(animatMethods)
+         //    animal.name = name
+         //    animal.energy = energy
+
+         //    return animal
+         // }
+         // const leo = Animal('Leo', 7)
+         // const snoop = Animal('Snoop', 10)
+         // leo.eat(10)
+         // snoop.play(5)
+
+         // 5. Prototypal Instantiation
+         // function Animal(name, energy) {
+         //    let animal = Object.create(Animal.prototype)
+         //    animal.name = name
+         //    animal.energy = energy
+
+         //    return animal
+         // }
+         // Animal.prototype.eat = function (amount) {
+         //    console.log(`${this.name} is eating.`)
+         //    this.energy += amount
+         // }
+         // Animal.prototype.sleep = function (length) {
+         //    console.log(`${this.name} is sleeping.`)
+         //    this.energy += length
+         // }
+         // Animal.prototype.play = function (length) {
+         //    console.log(`${this.name} is playing.`)
+         //    this.energy -= length
+         // }
+
+         // const leo = Animal('Leo', 7)
+         // const snoop = Animal('Snoop', 10)
+         // leo.eat(10)
+         // snoop.play(5)
+
+         // 6. Pseudoclassical Instantiation
+         // function Animal(name, energy) {
+         //    this.name = name
+         //    this.energy = energy
+         // }
+
+         // Animal.prototype.eat = function (amount) {
+         //    console.log(`${this.name} is eating.`)
+         //    this.energy += amount
+         // }
+
+         // Animal.prototype.sleep = function (length) {
+         //    console.log(`${this.name} is sleeping.`)
+         //    this.energy += length
+         // }
+
+         // Animal.prototype.play = function (length) {
+         //    console.log(`${this.name} is playing.`)
+         //    this.energy -= length
+         // }
+
+         // const leo = new Animal('Leo', 7)
+         // const snoop = new Animal('Snoop', 10)
+         // console.log(leo)
+         // console.log(snoop)
+
+         // 7. Class
+         // class Animal {
+         //    constructor(name, energy) {
+         //       this.name = name
+         //       this.energy = energy
+         //    }
+         //    eat(amount) {
+         //       console.log(`${this.name} is eating.`)
+         //       this.energy += amount
+         //    }
+         //    sleep(length) {
+         //       console.log(`${this.name} is sleeping.`)
+         //       this.energy += length
+         //    }
+         //    play(length) {
+         //       console.log(`${this.name} is playing.`)
+         //       this.energy -= length
+         //    }
+         // }
+         // const leo = new Animal('Leo', 7)
+         // const snoop = new Animal('Snoop', 10)
+         // leo.eat(12)
+         // console.log(leo)
+
+         // 8. Array Methods
+         // console.log(Array.prototype)
+
+         // 9. Static Methods
+         /* Normal Function of nextToEat */
+         // class Animal {
+         //    constructor(name, energy) {
+         //       this.name = name
+         //       this.energy = energy
+         //    }
+         //    eat(amount) {
+         //       console.log(`${this.name} is eating.`)
+         //       this.energy += amount
+         //    }
+         //    sleep(length) {
+         //       console.log(`${this.name} is sleeping.`)
+         //       this.energy += length
+         //    }
+         //    play(length) {
+         //       console.log(`${this.name} is playing.`)
+         //       this.energy -= length
+         //    }
+         // }
+         // function nextToEat(animals) {
+         //    const sortedByLeastEnergy = animals.sort((a, b) => {
+         //       return a.energy - b.energy
+         //    })
+         //    console.log(sortedByLeastEnergy)
+         //    return sortedByLeastEnergy[0].name
+         // }
+
+         // const leo = new Animal('Leo', 7)
+         // const snoop = new Animal('Snoop', 10)
+         // console.log(nextToEat([leo, snoop]))
+
+         /* nextToEat function in a CLASS using static keyword to make it in class itself not with its prototype */
+         // class Animal {
+         //    constructor(name, energy) {
+         //       this.name = name
+         //       this.energy = energy
+         //    }
+         //    eat(amount) {
+         //       console.log(`${this.name} is eating.`)
+         //       this.energy += amount
+         //    }
+         //    sleep(length) {
+         //       console.log(`${this.name} is sleeping.`)
+         //       this.energy += length
+         //    }
+         //    play(length) {
+         //       console.log(`${this.name} is playing.`)
+         //       this.energy -= length
+         //    }
+         //    static nextToEat(animals) {
+         //       const sortedByLeastEnergy = animals.sort((a, b) => {
+         //          return a.energy - b.energy
+         //       })
+
+         //       return sortedByLeastEnergy[0].name
+         //    }
+         // }
+         // const leo = new Animal('Leo', 7)
+         // const snoop = new Animal('Snoop', 10)
+
+         // console.log(Animal.nextToEat([leo, snoop]))
+         // console.log(Animal.prototype)
+
+         /* nextToEat function to add manually to the function object */
+         // function Animal(name, energy) {
+         //    this.name = name
+         //    this.energy = energy
+         // }
+
+         // Animal.prototype.eat = function (amount) {
+         //    console.log(`${this.name} is eating.`)
+         //    this.energy += amount
+         // }
+
+         // Animal.prototype.sleep = function (length) {
+         //    console.log(`${this.name} is sleeping.`)
+         //    this.energy += length
+         // }
+
+         // Animal.prototype.play = function (length) {
+         //    console.log(`${this.name} is playing.`)
+         //    this.energy -= length
+         // }
+         // Animal.nextToEat = function (animals) {
+         //    const sortedByLeastEnergy = animals.sort((a, b) => {
+         //       return a.energy - b.energy
+         //    })
+         //    return sortedByLeastEnergy[0].name
+         // }
+         // const leo = new Animal('Leo', 7)
+         // const snoop = new Animal('snoop', 10)
+         // console.log(Animal.nextToEat([leo, snoop]))
+
+         // 10. Getting the prototype of an object
+         // console.log(Object.getPrototypeOf)
+
+         // function Animal(name, energy) {
+         //    this.name = name
+         //    this.energy = energy
+         // }
+
+         // Animal.prototype.eat = function (amount) {
+         //    console.log(`${this.name} is eating.`)
+         //    this.energy += amount
+         // }
+
+         // Animal.prototype.sleep = function (length) {
+         //    console.log(`${this.name} is sleeping.`)
+         //    this.energy += length
+         // }
+
+         // Animal.prototype.play = function (length) {
+         //    console.log(`${this.name} is playing.`)
+         //    this.energy -= length
+         // }
+         // Animal.nextToEat = function (params) {
+         //    return params
+         // }
+
+         // const leo = new Animal('Leo', 7)
+         // const prototype = Object.getPrototypeOf(leo)
+
+         // console.log(prototype)
+         // // {constructor: ƒ, eat: ƒ, sleep: ƒ, play: ƒ}
+
+         // prototype === Animal.prototype
+
+         // 11 . Determining if a property lives on the prototype
+         // function Animal(name, energy) {
+         //    this.name = name
+         //    this.energy = energy
+         // }
+
+         // Animal.prototype.eat = function (amount) {
+         //    console.log(`${this.name} is eating.`)
+         //    this.energy += amount
+         // }
+
+         // Animal.prototype.sleep = function (length) {
+         //    console.log(`${this.name} is sleeping.`)
+         //    this.energy += length
+         // }
+
+         // Animal.prototype.play = function (length) {
+         //    console.log(`${this.name} is playing.`)
+         //    this.energy -= length
+         // }
+
+         // const leo = new Animal('Leo', 7)
+
+         // for (let key in leo) {
+         //    console.log(`Key: ${key}. Value: ${leo[key]}`)
+         // }
+
+         // for (let key in leo) {
+         //    if (leo.hasOwnProperty(key)) {
+         //       console.log(`Key: ${key}. Value: ${leo[key]}`)
+         //    }
+         // }
+
+         // 12. Check if an object is an instance of a Class
+         // function Animal(name, energy) {
+         //    this.name = name
+         //    this.energy = energy
+         // }
+
+         // function User() {}
+
+         // const leo = new Animal('Leo', 7)
+
+         // console.log(leo instanceof Animal) // true
+         // console.log(leo instanceof User)
+
+         // 13. What is a class?
+         // class User {
+         //    constructor(name) {
+         //       this.name = name
+         //    }
+         //    sayHi() {
+         //       alert(this.name)
+         //    }
+         // }
+         // // proof: User is a function
+         // alert(typeof User)
+         // // ...or, more precisely, the constructor method
+         // alert(User === User.prototype.constructor) // true
+         // // The methods are in User.prototype, e.g:
+         // alert(User.prototype.sayHi) // the code of the sayHi method
+         // // there are exactly two methods in the prototype
+         // alert(Object.getOwnPropertyNames(User.prototype))
+
+         /* Getters/setters */
+         // class User {
+         //    constructor(name) {
+         //       // invokes the setter
+         //       this.name = name
+         //    }
+
+         //    get name() {
+         //       return this._name
+         //    }
+
+         //    set name(value) {
+         //       if (value.length < 4) {
+         //          alert('Name is too short.')
+         //          return
+         //       }
+         //       this._name = value
+         //    }
+         // }
+
+         // let user = new User('John')
+         // alert(user.name) // John
+
+         // user = new User('')
+
+         /* Computed names […] */
+         // class User {
+         //    ['say' + 'Hi']() {
+         //       alert('Hello')
+         //    }
+         // }
+
+         // new User().sayHi()
+
+         /* Making bound methods with class fields*/
+         // class Button {
+         //    constructor(value) {
+         //       this.value = value
+         //    }
+
+         //    click = () => {
+         //       alert(this.value)
+         //    }
+         // }
+
+         // let button = new Button('hello')
+
+         // setTimeout(button.click, 1000)
+
+         // 14. Class inheritance
+         // class Animal {
+         //    constructor(name) {
+         //       this.speed = 0
+         //       this.name = name
+         //    }
+         //    run(speed) {
+         //       this.speed = speed
+         //       alert(`${this.name} runs with speed ${this.speed}.`)
+         //    }
+         //    stop() {
+         //       this.speed = 0
+         //       alert(`${this.name} stands still.`)
+         //    }
+         // }
+         // let animal = new Animal('My animal')
+
+         // class Rabbit extends Animal {
+         //    hide() {
+         //       alert(`${this.name} hides!`)
+         //    }
+         // }
+
+         // let rabbit = new Rabbit('White Rabbit')
+
+         // rabbit.run(5) // White Rabbit runs with speed 5.
+         // rabbit.hide()
+
+         /* Overriding a method */
+         // class Animal {
+         //    constructor(name) {
+         //       this.speed = 0
+         //       this.name = name
+         //    }
+
+         //    run(speed) {
+         //       this.speed = speed
+         //       alert(`${this.name} runs with speed ${this.speed}.`)
+         //    }
+
+         //    stop() {
+         //       this.speed = 0
+         //       alert(`${this.name} stands still.`)
+         //    }
+         // }
+
+         // class Rabbit extends Animal {
+         //    hide() {
+         //       alert(`${this.name} hides!`)
+         //    }
+
+         //    stop() {
+         //       super.stop() // call parent stop
+         //       this.hide() // and then hide
+         //    }
+         // }
+
+         // let rabbit = new Rabbit('White Rabbit')
+
+         // rabbit.run(5) // White Rabbit runs with speed 5.
+         // rabbit.stop()
+
+         // /* Overriding constructor */
+         // class Animal {
+         //    constructor(name) {
+         //       this.speed = 0
+         //       this.name = name
+         //    }
+         //    // ...
+         // }
+
+         // class Rabbit extends Animal {
+         //    constructor(name, earLength) {
+         //       super(name)
+         //       this.earLength = earLength
+         //    }
+
+         //    // ...
+         // }
+         // let rabbit = new Rabbit('White Rabbit', 10)
+         // alert(rabbit.name)
+         // alert(rabbit.earLength)
+
+         // 15. Static properties and methods
+         /* Static properties and methods */
+         // class Article {
+         //    constructor(title, date) {
+         //       this.title = title
+         //       this.date = date
+         //    }
+
+         //    static compare(articleA, articleB) {
+         //       return articleA.date - articleB.date
+         //    }
+         // }
+
+         // // usage
+         // let articles = [
+         //    new Article('HTML', new Date(2019, 1, 1)),
+         //    new Article('CSS', new Date(2019, 0, 1)),
+         //    new Article('JavaScript', new Date(2019, 11, 1)),
+         //    new Article("Today's digest", new Date())
+         // ]
+
+         // articles.sort(Article.compare)
+
+         // alert(articles[3].title)
+
+         /* Inheritance of static properties and methods */
+         // class Animal {
+         //    static planet = 'Earth'
+
+         //    constructor(name, speed) {
+         //       this.speed = speed
+         //       this.name = name
+         //    }
+
+         //    run(speed = 0) {
+         //       this.speed += speed
+         //       alert(`${this.name} runs with speed ${this.speed}.`)
+         //    }
+
+         //    static compare(animalA, animalB) {
+         //       return animalA.speed - animalB.speed
+         //    }
+         // }
+
+         // // Inherit from Animal
+         // class Rabbit extends Animal {
+         //    hide() {
+         //       alert(`${this.name} hides!`)
+         //    }
+         // }
+
+         // let rabbits = [
+         //    new Rabbit('White Rabbit', 10),
+         //    new Rabbit('Black Rabbit', 5)
+         // ]
+
+         // rabbits.sort(Rabbit.compare)
+
+         // rabbits[0].run() // Black Rabbit runs with speed 5.
+
+         // alert(Rabbit.planet)
+
+         // 16. Extending built-in classes
+         class PowerArray extends Array {
+            isEmpty() {
+               return this.length === 0
+            }
+         }
+
+         let arr = new PowerArray(1, 2, 5, 10, 50)
+         alert(arr.isEmpty())
+         let filteredArr = arr.filter((item) => item >= 10)
+         alert(filteredArr)
+         alert(filteredArr.isEmpty())
+         filteredArr = arr.filter((item) => item > 50)
+         alert(filteredArr)
+         alert(filteredArr.isEmpty())
+
+         console.log('Hello')
+      </script>
+   </body>
+</html>

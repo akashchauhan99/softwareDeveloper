@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h1>Check Login: Logical and if else Task</h1>
+      <script>
+         let login = prompt('Enter the username')
+         if (login == 'admin') {
+            let password = prompt('Enter the password')
+            // document.write(password)
+            if (password == 'TheMaster') {
+               document.write('Welcome!')
+            } else if (password == null) {
+               document.write('Canceled')
+            } else {
+               document.write('Wrong password')
+            }
+         } else if (login == null) {
+            document.write('Canceled')
+         } else {
+            document.write('I don’t know you')
+         }
+      </script>
+   </body>
+</html>

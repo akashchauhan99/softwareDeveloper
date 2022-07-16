@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>task4 29-june-2021</title>
+   </head>
+   <body>
+      <h2>1. Resistor Color</h2>
+      <h2>2. Two Fer</h2>
+      <script>
+         // 1. Resistor colors
+         let colors = [
+            'Black',
+            'Brown',
+            'Red',
+            'Orange',
+            'Yellow',
+            'Green',
+            'Blue',
+            'Violet',
+            'Grey',
+            'White'
+         ]
+         let codes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+         function store(colors, code) {
+            // const map = new Map()
+            const set = new Set()
+            for (let i = 0; i < codes.length; i++) {
+               set.add(colors[i], codes[i])
+            }
+            return set
+         }
+         console.log(store(colors, codes))
+
+         // 2. Two Fer
+         function twofer(name) {
+            console.log(`name`, `String to return`)
+            console.log(`${name}`, `One for ${name}, one for me.`)
+         }
+         // twofer('ABC')
+         // twofer('CDEF')
+         // twofer('nkcwiaomalcsm')
+      </script>
+   </body>
+</html>

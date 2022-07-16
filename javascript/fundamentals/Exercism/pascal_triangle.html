@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function printPascal(n) {
+            for (let line = 0; line < n; line++) {
+               for (let i = 0; i <= line; i++)
+                  document.write(binomialCoeff(line, i) + ' ')
+
+               document.write('<br>')
+            }
+         }
+
+         // Link for details of this function
+         // https://www.geeksforgeeks.org/space-and-time-efficient-binomial-coefficient/
+         function binomialCoeff(n, k) {
+            let res = 1
+
+            if (k > n - k) k = n - k
+
+            for (let i = 0; i < k; ++i) {
+               res *= n - i
+               res /= i + 1
+            }
+            return res
+         }
+
+         // Driver Code
+         printPascal(9)
+      </script>
+   </body>
+</html>

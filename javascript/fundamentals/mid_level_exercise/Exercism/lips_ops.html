@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>List OPS</title>
+   </head>
+   <body>
+      <script>
+         class List {
+            constructor(values) {
+               this.values = values ? values : []
+            }
+
+            append(list) {
+               let appendedList = this.values
+
+               for (let i = 0; i < list.length; i++) {
+                  appendedList.push(list[i])
+               }
+
+               return this
+            }
+
+            concat(list) {
+               this.values = this.values.concat(list)
+               return this.values
+            }
+
+            filter(predicate) {
+               const result = this.values.filter((pred) => pred == predicate)
+               return result
+            }
+
+            length() {
+               let count = 0
+
+               for (let i = 0; i < this.values.length; i++) {
+                  count++
+               }
+
+               return count
+            }
+
+            reverse() {
+               let reversedList = []
+
+               for (let i = this.values.length - 1; i > -1; i--) {
+                  reversedList.push(this.values[i])
+               }
+
+               this.values = reversedList
+               return this
+            }
+         }
+         let list = new List([5, 6])
+         console.log(list.append([2, 3, 3]))
+         console.log(list.concat([8]))
+         console.log(list.filter(3))
+         console.log(list.length())
+         console.log(list.reverse())
+      </script>
+   </body>
+</html>

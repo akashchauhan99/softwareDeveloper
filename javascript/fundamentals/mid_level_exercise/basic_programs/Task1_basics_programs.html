@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Task1 22-June-2021</title>
+   </head>
+   <body>
+      <h2>1. Hello World</h2>
+      <h2>2. Add Two Number</h2>
+      <h2>3. Square Root of a number</h2>
+      <h2>4. Area of Triangle</h2>
+      <h2>5. Swap Two Numbers</h2>
+      <h2>6. Quadratic Equation</h2>
+      <h2>7. Kilometeres to Miles</h2>
+      <h2>8. Celsius to Fahrenheit</h2>
+      <h2>9. Odd and Even</h2>
+      <h2>10. Largest Number Among Three Numbers</h2>
+      <h2>11. Prime Number</h2>
+      <h2>12. Print Prime Numbers</h2>
+      <h2>13. Factorial of a Number using for loop</h2>
+      <h2>14. Factorial of a Number using recursion</h2>
+      <h2>15. Multiplication Table</h2>
+      <h2>16. Fibonacci Sequence using for loop</h2>
+      <h2>17. Fibonacci Sequence using recursion</h2>
+      <h2>18. Check Armstrong Number</h2>
+      <h2>19. Armstrong Number in an Interval</h2>
+      <h2>20. Simple Calculator</h2>
+      <h2>21. Sum of Natural Numbers</h2>
+      <h2>22. Check if the Numbers Have Same Last Digit</h2>
+      <h2>23. HCF of Two Number</h2>
+      <h2>24. LCM of Two Number</h2>
+      <h2>25. Factors of Positive Number</h2>
+      <h2>26. Sum of Natural Numbers Using Recursion</h2>
+      <h2>27. Guess a Number</h2>
+      <h2>28. Shuffle Deck of Cards</h2>
+      <h2>29. Right Triangle Star Pattern</h2>
+      <h2>30. Downward Triangle Star Pattern</h2>
+      <script>
+         // 1. Hello World
+         function Hello() {
+            alert('Hello World')
+            console.log('Hello World')
+            document.write('Hello World')
+         }
+         // Hello()
+
+         // 2. Add two number
+         function add(a, b) {
+            return a + b
+         }
+         // let a = parseInt(prompt('Enter first number'))
+         // let b = parseInt(prompt('Enter second number'))
+         // let result = add(a, b)
+         // document.write(result)
+
+         // 3. square root of a Number
+         function squareroot(num) {
+            return Math.sqrt(num)
+         }
+         // let num = parseInt(prompt('Enter the number'))
+         // let result = squareroot(num)
+         // document.write(result)
+
+         // 4. Area of Triangle
+         function AOT(base, height) {
+            return (base * height) / 2
+         }
+         // let num1 = parseFloat(prompt('Enter first number'))
+         // let num2 = parseFloat(prompt('Enter second number'))
+         // let result = AOT(num1, num2)
+         // document.write(result)
+
+         // 5. Swap Two Numbers
+         function swap(num1, num2) {
+            let temp
+            document.write(num1, ' ', num2)
+            document.write('<br>')
+            temp = num1
+            num1 = num2
+            num2 = temp
+            document.write(num1, ' ', num2)
+         }
+         // let num1 = parseInt(prompt('Enter first number'))
+         // let num2 = parseInt(prompt('Enter second number'))
+         // swap(num1, num2)
+
+         // 6. Quadratic Equation
+         // let posResult, negResult
+         // let a = parseFloat(prompt('Enter the a'))
+         // let b = parseFloat(prompt('Enter the b'))
+         // let c = parseFloat(prompt('Enter the c'))
+         // let discrimenant = b * b - 4 * a * c
+         // if (discrimenant > 0) {
+         //    posResult = (-b + Math.sqrt(discrimenant)) / (2 * a)
+         //    negResult = (-b - Math.sqrt(discrimenant)) / (2 * a)
+         //    document.write(posResult, ', ', negResult)
+         // } else if (discrimenant == 0) {
+         //    posResult = negResult = -b / (2 * a)
+         //    document.write(posResult, ', ', negResult)
+         // } else {
+         //    let realPart = (-b / (2 * a)).toFixed(2)
+         //    let imagPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2)
+         //    document.write(realPart, ', ', imagPart)
+         // }
+
+         // 7. Kilometeres to Miles
+         function k_to_m(num) {
+            return num * 0.621371
+         }
+         // let num = parseFloat(prompt('Enter the km to convert into miles'))
+         // let result = k_to_m(num)
+         // document.write(result)
+
+         // 8. Celsius to Fahrenheit
+         function c_to_f(num) {
+            return num * 1.8 + 32
+         }
+         // let num = parseFloat(prompt('Enter the km to convert into miles'))
+         // let result = c_to_f(num)
+         // document.write(result)
+
+         // 9. Odd and Even
+         function oddEven(num) {
+            for (let i = 0; i < num; i++) {
+               if (i % 2 == 0) {
+                  document.write('Even : ')
+                  document.write(i)
+                  document.write('<br>')
+               } else {
+                  document.write('Odd : ')
+                  document.write(i)
+                  document.write('<br>')
+               }
+            }
+         }
+         // let num = parseInt(prompt('Enter the km to convert into miles'))
+         // oddEven(num)
+
+         // 10. Largest Number Among Three Numbers
+         // let num1 = parseFloat(prompt('Enter first number: '))
+         // let num2 = parseFloat(prompt('Enter second number: '))
+         // let num3 = parseFloat(prompt('Enter third number: '))
+         // let largest = Math.max(num1, num2, num3)
+         // document.write(largest)
+
+         // 11. Prime Number
+         function checkPrime(num) {
+            let isPrime = true
+            if (num === 1) {
+               document.write('1 is neither prime nor composite number.')
+            } else if (num > 1) {
+               for (let i = 2; i < num; i++) {
+                  if (num % i == 0) {
+                     isPrime = false
+                     break
+                  }
+               }
+            } else {
+               document.write('The number is not a Prime Number')
+            }
+            if (isPrime) {
+               document.write(num, ' is Prime Number')
+            } else {
+               document.write(num, ' is not Prime Number')
+            }
+         }
+
+         // let num = parseInt(prompt('Enter the number'))
+         // checkPrime(num)
+
+         // 12. Print Prime Numbers
+         function printPrime(first, second) {
+            for (let i = first; i <= second; i++) {
+               let flag = 0
+               for (let j = 2; j < i; j++) {
+                  if (i % j == 0) {
+                     flag = 1
+                     break
+                  }
+               }
+               if (i > 1 && flag == 0) {
+                  document.write(i, ', ')
+               }
+            }
+         }
+
+         // let firstNum = parseInt(prompt('Enter the First Number'))
+         // let secondNum = parseInt(prompt('Enter the Second Number'))
+         // printPrime(firstNum, secondNum)
+
+         // 13., 14. Factorial of a Number
+         // using recursion
+         function factorialRe(num) {
+            let fact1 = 1
+            if (num === 0) {
+               return fact1
+            } else {
+               return num * factorial(num - 1)
+            }
+         }
+         // using loop
+         function factorialFor(num) {
+            let fact1 = 1
+            if (num === 0) {
+               return fact1
+            } else {
+               for (let i = 1; i <= num; i++) {
+                  fact1 *= i
+               }
+               return fact1
+            }
+         }
+         // let num = parseInt(prompt('Enter the number'))
+         // let result = factorialRe(num)
+         // document.write(result)
+         // let num = parseInt(prompt('Enter the number'))
+         // let result = factorialFor(num)
+         // document.write(result)
+
+         // 15. Multiplication Table
+         function MultiplicationTable(num) {
+            for (let i = 1; i <= 10; i++) {
+               document.write(num, ' * ', i, ' = ', num * i, '<br>')
+            }
+         }
+         // let num = parseInt(prompt('Enter the number'))
+         // MultiplicationTable(num)
+
+         // 16., 17. Fibonacci Sequence
+         // using recursion
+         function fibonacciRE(num) {
+            if (num <= 1) {
+               return num
+            }
+            return fibonacci(num - 1) + fibonacci(num - 2)
+         }
+
+         // using for
+         function fibonacciFor(num) {
+            let n1 = 0,
+               n2 = 1,
+               nextTerm
+            for (let i = 1; i <= num; i++) {
+               document.write(n1, ', ')
+               nextTerm = n1 + n2
+               n1 = n2
+               n2 = nextTerm
+            }
+         }
+         // let num = parseInt(prompt('Enter the number'))
+         // let result = fibonacciRE(num)
+         // document.write(result)
+
+         // let num = parseInt(prompt('Enter the number'))
+         // fibonacciFor(num)
+
+         // 18. Check Armstrong Number
+         function armStrong(num) {
+            let temp = num,
+               result = 0,
+               remainder = 0,
+               sum = 0
+            while (temp > 0) {
+               remainder = temp % 10
+               sum += remainder * remainder * remainder
+               temp = parseInt(temp / 10)
+            }
+            return sum
+         }
+         // let num = parseInt(prompt('Enter the number'))
+         // let result = armStrong(num)
+         // if (result == num) {
+         //    document.write(
+         //       num,
+         //       ' is an armstrong because the result is ',
+         //       result
+         //    )
+         // } else {
+         //    document.write(
+         //       num,
+         //       ' is not an armstrongbecause the result is ',
+         //       result
+         //    )
+         // }
+
+         // 19. Armstrong Number in an Interval
+         function armStrongInterval(firstNum, secondNum) {
+            for (let i = firstNum; i <= secondNum; i++) {
+               // number of digits
+               // calculation
+               let x = i
+               let n = 0
+               while (x != 0) {
+                  x = parseInt(x / 10)
+                  ++n
+               }
+               // compute sum of nth
+               // power of its digits
+               let pow_sum = 0
+               x = i
+               while (x != 0) {
+                  let digit = x % 10
+                  pow_sum += parseInt(Math.pow(digit, n))
+                  x = parseInt(x / 10)
+               }
+               if (pow_sum == i) {
+                  document.write(i + ' ')
+               }
+            }
+         }
+
+         // let num1 = parseInt(prompt('Enter the First Number'))
+         // let num2 = parseInt(prompt('Enter the Second Number'))
+         // armStrongInterval(num1, num2)
+
+         // 20. Simple Calculator
+         function calc(num1, num2, op) {
+            let result = 0
+            switch (op) {
+               case '+':
+                  result = num1 + num2
+                  break
+               case '-':
+                  result = num1 - num2
+                  break
+               case '*':
+                  result = num1 * num2
+                  break
+               case '/':
+                  result = num1 / num2
+                  break
+               default:
+                  document.write('Wrong Input')
+            }
+            return result
+         }
+
+         // let num1 = parseFloat(prompt('Enter the First Number'))
+         // let num2 = parseFloat(prompt('Enter the Second Number'))
+         // let op = prompt('Enter the operation you want to perform')
+         // let result = calc(num1, num2, op)
+         // document.write(result)
+
+         // 21. Sum of Natural Numbers
+         function sum(num) {
+            let add = 0
+            for (let i = 1; i <= num; i++) {
+               add += i
+            }
+            return add
+         }
+         // let num = parseInt(prompt('Enter the number'))
+         // let result = sum(num)
+         // document.write(result)
+
+         // 22. Check if the Numbers Have Same Last Digit
+         function check(firstNum, secondNum, thirdNum) {
+            let res1 = 0,
+               res2 = 0,
+               res3 = 0
+            res1 = firstNum % 10
+            res2 = secondNum % 10
+            res3 = thirdNum % 10
+            if (res1 == res2 && res2 == res3 && res3 == res1) {
+               document.write(
+                  'Last digit is same of ',
+                  firstNum,
+                  ', ',
+                  secondNum,
+                  ', ',
+                  thirdNum
+               )
+            } else {
+               document.write(
+                  'Last digit is not same of ',
+                  firstNum,
+                  ', ',
+                  secondNum,
+                  ', ',
+                  thirdNum
+               )
+            }
+         }
+         // let num1 = parseInt(prompt('Enter the First Number'))
+         // let num2 = parseInt(prompt('Enter the Second Number'))
+         // let num3 = parseInt(prompt('Enter the Third Number'))
+         // check(num1, num2, num3)
+
+         // 23. HCF of Two Number
+         function HCF(num1, num2) {
+            let hcf = 0
+            for (let i = 1; i <= num1 && i <= num2; i++) {
+               if (num1 % i == 0 && num2 % i == 0) {
+                  hcf = i
+               }
+            }
+            return hcf
+         }
+         // let num1 = parseInt(prompt('Enter the First Number'))
+         // let num2 = parseInt(prompt('Enter the Second Number'))
+         // let result = HCF(num1, num2)
+         // document.write(result)
+
+         // 24. LCM of Two Number
+         function LCM(num1, num2) {
+            let lcm = 0,
+               hcf = 0
+            for (let i = 1; i <= num1 && i <= num2; i++) {
+               if (num1 % i == 0 && num2 % i == 0) {
+                  hcf = i
+               }
+            }
+            lcm = (num1 * num2) / hcf
+            return lcm
+         }
+         // let num1 = parseInt(prompt('Enter the First Number'))
+         // let num2 = parseInt(prompt('Enter the Second Number'))
+         // let result = LCM(num1, num2)
+         // document.write(result)
+
+         // 25. Factors of Positive Number
+         function factors(num) {
+            for (let i = 1; i <= num; i++) {
+               if (num % i == 0) {
+                  document.write(i, '<br>')
+               }
+            }
+         }
+         // let num = parseInt(prompt('Enter the Number'))
+         // factors(num)
+
+         // 26. Sum of Natural Numbers Using Recursion
+         function sum(num) {
+            if (num > 0) {
+               return num + sum(num - 1)
+            } else {
+               return num
+            }
+         }
+         // let num = parseInt(prompt('Enter the Number'))
+         // let result = sum(num)
+         // document.write(result)
+
+         // 27. Guess a Number
+         function guess(num) {
+            const random = Math.floor(Math.random() * 10) + 1
+            if (random == num) {
+               document.write('You win!!!!')
+            } else {
+               document.write('You Lose!!!!, Because the number was ', random)
+            }
+         }
+         // let num = parseInt(prompt('Choose a number between 1 to 10'))
+         // guess(num)
+
+         // 28. Shuffle Deck of Cards
+         function Deck() {
+            const suits = ['Spades', 'Diamonds', 'Club', 'Heart']
+            const values = [
+               'Ace',
+               '2',
+               '3',
+               '4',
+               '5',
+               '6',
+               '7',
+               '8',
+               '9',
+               '10',
+               'Jack',
+               'Queen',
+               'King'
+            ]
+            let deck = []
+            for (let i = 0; i < suits.length; i++) {
+               for (let x = 0; x < values.length; x++) {
+                  let card = { Value: values[x], Suit: suits[i] }
+                  deck.push(card)
+               }
+            }
+            return deck
+         }
+
+         function shuffle(num) {
+            let deck = Deck()
+            for (let i = deck.length - 1; i > 0; i--) {
+               let j = Math.floor(Math.random() * i)
+               let temp = deck[i]
+               deck[i] = deck[j]
+               deck[j] = temp
+            }
+            for (let i = 0; i < num; i++) {
+               document.write(`${deck[i].Value} of ${deck[i].Suit}`, '<br>')
+            }
+         }
+         let num = parseInt(prompt('Choose a number between 1 to 10'))
+         shuffle(num)
+
+         // 29. Right Triangle Star Pattern
+         function RightTriangle(num) {
+            for (let i = 1; i <= num; i++) {
+               for (let j = 0; j < i; j++) {
+                  document.write('*')
+               }
+               document.write('<br>')
+            }
+         }
+         // RightTriangle(5)
+
+         // 30. Downward Triangle Star Pattern
+         function DownTriangle(num) {
+            for (let i = 0; i < num; i++) {
+               for (let j = 0; j < num - i; j++) {
+                  document.write('*')
+               }
+               document.write('<br>')
+            }
+         }
+         // DownTriangle(5)
+      </script>
+   </body>
+</html>

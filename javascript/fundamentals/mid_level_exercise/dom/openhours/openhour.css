@@ -1,0 +1,40 @@
+* {
+   padding: 0px;
+   margin: 0px;
+}
+
+section {
+   display: block;
+   width: 100%;
+   height: 100vh;
+   background-color: rgb(224, 139, 100);
+   text-align: center;
+}
+select {
+   height: 40px;
+   width: 25%;
+   margin: 10px;
+   padding: 10px;
+   background-color: rgb(197, 107, 42);
+   color: white;
+}
+
+div {
+   margin: 10px;
+   padding: 10px;
+   font-size: 1.3em;
+}
+div input,
+div button {
+   width: 25%;
+   text-align: center;
+   height: 35px;
+   border-radius: 5px;
+}
+
+div button {
+   background-color: rgb(111, 67, 214);
+   color: white;
+   height: 30px;
+   font-size: large;
+}

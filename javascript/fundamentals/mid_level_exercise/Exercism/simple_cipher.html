@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Simple Cipher</title>
+   </head>
+   <body>
+      <script>
+         class Cipher {
+            constructor(key) {
+               this._alphabetLength = 'z'.charCodeAt() - 'a'.charCodeAt() + 1
+               if (!key) {
+                  this._key = []
+                  for (let index = 0; index < 100; index++) {
+                     this._key.push(
+                        Math.floor(Math.random() * this._alphabetLength)
+                     )
+                  }
+               } else {
+                  this._key = Array.prototype.map.call(
+                     key,
+                     (item) => item.charCodeAt() - 'a'.charCodeAt()
+                  )
+               }
+               this._length = this._key.length
+            }
+
+            encode(plaintext) {
+               const encodedCharCodes = Array.prototype.map.call(
+                  plaintext,
+                  (item, index) => {
+                     const res =
+                        item.charCodeAt() + this._key[index % this._length]
+                     return res > 'z'.charCodeAt()
+                        ? res - this._alphabetLength
+                        : res
+                  }
+               )
+               return String.fromCharCode(...encodedCharCodes)
+            }
+
+            decode(encodedText) {
+               const textCharCodes = Array.prototype.map.call(
+                  encodedText,
+                  (item, index) => {
+                     const res =
+                        item.charCodeAt() - this._key[index % this._length]
+                     return res < 'a'.charCodeAt()
+                        ? res + this._alphabetLength
+                        : res
+                  }
+               )
+               return String.fromCharCode(...textCharCodes)
+            }
+
+            get key() {
+               return String.fromCharCode(
+                  ...this._key.map((item) => item + 'a'.charCodeAt())
+               )
+            }
+         }
+         let key = 'ddddddddddddddddd'
+         let cipher = new Cipher(key)
+         console.log(cipher.encode('iamapandabear'))
+      </script>
+   </body>
+</html>

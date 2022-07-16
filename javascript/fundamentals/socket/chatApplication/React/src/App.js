@@ -1,0 +1,30 @@
+import React, { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom'
+
+import Authentication from './pages/authentication/Authentication'
+import Home from './pages/home/Home'
+import NotFound from './pages/not-found/NotFound'
+
+import logo from './logo.svg';
+import './App.css';
+
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Authentication} />
+          <Route path="/home/" exact component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    )
+  }
+}
+
+export default App;
